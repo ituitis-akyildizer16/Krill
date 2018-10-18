@@ -13,3 +13,7 @@ adheres to [Semantic Versioning](https://semver.org/).
 ### Changed
 - Lowered default model to `qwen2.5-coder:7b` (better latency on M-series)
 
+## [0.9.0] - 2026-01-19
+
+### Added
+- `krill models` command
