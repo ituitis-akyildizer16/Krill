@@ -9,3 +9,7 @@ adheres to [Semantic Versioning](https://semver.org/).
 ### Fixed
 - Cache keys no longer collide when a file path contains `|`
 - `suggest --inline` respects the configured shell
+
+### Changed
+- Lowered default model to `qwen2.5-coder:7b` (better latency on M-series)
+
