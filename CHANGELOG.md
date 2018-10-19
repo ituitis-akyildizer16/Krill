@@ -26,3 +26,7 @@ adheres to [Semantic Versioning](https://semver.org/).
 - Python plugin SDK (`plugins/`) with context providers
 - `krill init` writes a default config
 
+### Changed
+- Context collection runs fully in parallel
+
+## [0.7.0] - 2025-06-12
