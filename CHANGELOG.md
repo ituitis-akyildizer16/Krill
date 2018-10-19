@@ -17,3 +17,8 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ### Added
 - `krill models` command
+- PowerShell completion script
+- `--context-only` flag on `ask` for debugging prompts
+
+## [0.8.0] - 2025-11-02
+
