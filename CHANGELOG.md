@@ -30,3 +30,7 @@ adheres to [Semantic Versioning](https://semver.org/).
 - Context collection runs fully in parallel
 
 ## [0.7.0] - 2025-06-12
+
+### Added
+- VS Code extension (`extension/`) with ask/review/suggest commands
+- Safety deny/warn patterns for `suggest`
