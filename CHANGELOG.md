@@ -34,3 +34,7 @@ adheres to [Semantic Versioning](https://semver.org/).
 ### Added
 - VS Code extension (`extension/`) with ask/review/suggest commands
 - Safety deny/warn patterns for `suggest`
+
+## [0.6.0] - 2025-01-27
+
+### Added
