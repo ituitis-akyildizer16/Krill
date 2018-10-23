@@ -47,3 +47,7 @@ adheres to [Semantic Versioning](https://semver.org/).
 - `krill review` for staged diff summaries
 - markdown-stripping terminal renderer
 
+## [0.4.0] - 2024-05-21
+
+### Added
+- `krill suggest` with shell-specific prompts
