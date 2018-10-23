@@ -43,3 +43,7 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [0.5.0] - 2024-10-08
 
+### Added
+- `krill review` for staged diff summaries
+- markdown-stripping terminal renderer
+
