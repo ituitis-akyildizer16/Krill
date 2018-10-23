@@ -55,3 +55,8 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [0.3.0] - 2023-12-14
 
+### Added
+- Blame-aware answers with commit citations
+- Bounded context assembly (max_blame_lines / max_diff_lines)
+
+## [0.2.0] - 2023-04-03
