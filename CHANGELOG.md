@@ -38,3 +38,8 @@ adheres to [Semantic Versioning](https://semver.org/).
 ## [0.6.0] - 2025-01-27
 
 ### Added
+- `krill status` repo digest
+- TTL cache for model responses
+
+## [0.5.0] - 2024-10-08
+
