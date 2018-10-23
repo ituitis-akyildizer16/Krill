@@ -51,3 +51,7 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ### Added
 - `krill suggest` with shell-specific prompts
+- zsh and fish completions
+
+## [0.3.0] - 2023-12-14
+
