@@ -2,3 +2,4 @@
 
 build:
 	go build -o bin/krill ./cmd/krill
+
