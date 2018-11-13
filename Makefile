@@ -8,3 +8,4 @@ test:
 
 lint:
 	golangci-lint run ./...
+
