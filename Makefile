@@ -10,3 +10,4 @@ lint:
 	golangci-lint run ./...
 
 completions:
+	./scripts/completions.sh
