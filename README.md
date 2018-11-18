@@ -27,3 +27,15 @@ krill suggest "stage and commit everything"
 - [Quick start](#quick-start)
 - [Commands](#commands)
 - [How it grounds answers in git](#how-it-grounds-answers-in-git)
+- [Configuration](#configuration)
+- [Shell integration](#shell-integration)
+- [Security & privacy](#security--privacy)
+- [Performance](#performance)
+- [Development](#development)
+- [Known limitations](#known-limitations)
+- [License](#license)
+
+---
+
+## Why local-first
+
