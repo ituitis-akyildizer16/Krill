@@ -74,3 +74,14 @@ curl -fsSL https://raw.githubusercontent.com/ituitis-akyildizer16/krill/main/scr
 # pull a coding model (7b is a good size/latency tradeoff)
 ollama pull qwen2.5-coder:7b
 ```
+
+Verify:
+
+```bash
+krill status
+# krill v0.9.2 · model qwen2.5-coder:7b · shell bash · cache ok
+```
+
+## Quick start
+
+```bash
