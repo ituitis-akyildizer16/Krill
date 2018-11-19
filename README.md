@@ -50,3 +50,15 @@ krill flips the architecture:
   about.
 - **Git is the ground truth** — instead of asking a model to guess, krill
   feeds it the actual `git blame`, `git diff`, and recent log for the files
+  that matter. Answers cite the commit they came from.
+- **The prompt is built locally** — context collection is parallel and
+  bounded; the assembled prompt fits your context window before it is sent.
+
+The result is a copilot that is *fast*, *private*, and *specific to your
+repo* — the three things cloud copilots trade away.
+
+## Install
+
+Requirements:
+
+- Go 1.21+
