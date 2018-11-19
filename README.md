@@ -39,3 +39,14 @@ krill suggest "stage and commit everything"
 
 ## Why local-first
 
+Every agent-era CLI wants to stream your diff to a cloud model. That has
+three problems: your code leaves the machine, prompts are rate-limited, and
+the answers don't know your repo's history.
+
+krill flips the architecture:
+
+- **Ollama runs the model** — `qwen2.5-coder:7b` and friends run on your
+  hardware. The model never sees anything you haven't deliberately asked
+  about.
+- **Git is the ground truth** — instead of asking a model to guess, krill
+  feeds it the actual `git blame`, `git diff`, and recent log for the files
