@@ -62,3 +62,15 @@ repo* — the three things cloud copilots trade away.
 Requirements:
 
 - Go 1.21+
+- [Ollama](https://ollama.com) running locally (`ollama serve`)
+
+```bash
+# build from source
+go install github.com/ituitis-akyildizer16/krill/cmd/krill@latest
+
+# or via the release script
+curl -fsSL https://raw.githubusercontent.com/ituitis-akyildizer16/krill/main/scripts/install.sh | sh
+
+# pull a coding model (7b is a good size/latency tradeoff)
+ollama pull qwen2.5-coder:7b
+```
