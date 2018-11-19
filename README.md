@@ -85,3 +85,15 @@ krill status
 ## Quick start
 
 ```bash
+# Ask about the file you're working on (blame + diff aware)
+krill ask "why is this function slow?" -f internal/git/blame.go
+
+# Get a shell command for what you want to do
+krill suggest "stage and commit everything"
+# -> git add -A && git commit -m "wip"
+
+# Summarize the staged diff before committing
+krill review
+
+# Repo digest: branches, dirty files, recent history, hints
+krill status
