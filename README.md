@@ -97,3 +97,14 @@ krill review
 
 # Repo digest: branches, dirty files, recent history, hints
 krill status
+```
+
+## Commands
+
+| Command | Description |
+|---|---|
+| `krill ask <question> [-f file]` | Answer grounded in blame/diff/log context |
+| `krill suggest <intent>` | Natural language → shell command, safety-checked |
+| `krill review` | Summarize the staged diff |
+| `krill status` | Repo digest with model-backed hints |
+| `krill init` | Write a default config to `~/.config/krill/config.toml` |
