@@ -108,3 +108,15 @@ krill status
 | `krill review` | Summarize the staged diff |
 | `krill status` | Repo digest with model-backed hints |
 | `krill init` | Write a default config to `~/.config/krill/config.toml` |
+| `krill models` | List models available on the local Ollama server |
+| `krill version` | Print version and build info |
+
+## How it grounds answers in git
+
+When you `krill ask`, the following context is collected **in parallel**
+and assembled into a bounded prompt:
+
+1. **Blame** for the target file (or the files changed in the working
+   tree) — up to `context.max_blame_lines` lines.
+2. **Diff** of uncommitted changes — up to `context.max_diff_lines`.
+3. **Recent history** — commit subjects and authors for the last
