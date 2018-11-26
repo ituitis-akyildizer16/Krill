@@ -132,3 +132,14 @@ $ krill ask "who last touched the retry loop?" -f internal/ollama/client.go
 
 The retry loop in client.go was last changed in commit 4c8a1f3
 ("ollama: back off on 5xx during generate", 2025-11-02).
+The current 3-attempt loop with exponential backoff was added there;
+earlier commits (b91e0aa, 2024-06) used a fixed 2-second wait.
+```
+
+## Configuration
+
+Config lives at `~/.config/krill/config.toml` (override with
+`KRILL_CONFIG`):
+
+```toml
+model = "qwen2.5-coder:7b"
