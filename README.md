@@ -143,3 +143,15 @@ Config lives at `~/.config/krill/config.toml` (override with
 
 ```toml
 model = "qwen2.5-coder:7b"
+shell = "bash"
+theme = "dark"
+cache_ttl_seconds = 3600
+no_color = false
+
+[context]
+max_blame_lines = 400
+max_diff_lines = 600
+history_days = 14
+
+[ollama]
+url = "http://localhost:11434"
