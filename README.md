@@ -120,3 +120,15 @@ and assembled into a bounded prompt:
    tree) — up to `context.max_blame_lines` lines.
 2. **Diff** of uncommitted changes — up to `context.max_diff_lines`.
 3. **Recent history** — commit subjects and authors for the last
+   `context.history_days` days.
+4. **Repo metadata** — branch, remote URL (name only), language stats.
+
+The prompt template tells the model to answer strictly from this context
+and to cite `commit <short-sha>` when it references history. If the
+context doesn't contain the answer, it says so instead of hallucinating.
+
+```
+$ krill ask "who last touched the retry loop?" -f internal/ollama/client.go
+
+The retry loop in client.go was last changed in commit 4c8a1f3
+("ollama: back off on 5xx during generate", 2025-11-02).
