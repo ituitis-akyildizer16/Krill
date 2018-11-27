@@ -166,3 +166,15 @@ See `docs/config-reference.md` for every key.
 ## Shell integration
 
 krill ships completion scripts for bash, zsh, fish, and PowerShell, plus a
+`krill suggest` flow designed for `Ctrl-T` style keybindings:
+
+```bash
+# bash
+source <(krill completion bash)
+
+# zsh
+source <(krill completion zsh)
+
+# fish
+krill completion fish | source
+```
