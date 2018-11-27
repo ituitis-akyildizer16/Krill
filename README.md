@@ -155,3 +155,14 @@ history_days = 14
 
 [ollama]
 url = "http://localhost:11434"
+timeout_seconds = 120
+
+[ignore]
+paths = ["node_modules", ".git", "vendor"]
+```
+
+See `docs/config-reference.md` for every key.
+
+## Shell integration
+
+krill ships completion scripts for bash, zsh, fish, and PowerShell, plus a
