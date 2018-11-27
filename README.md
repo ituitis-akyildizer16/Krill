@@ -178,3 +178,15 @@ source <(krill completion zsh)
 # fish
 krill completion fish | source
 ```
+
+`krill suggest` prints a single command with no decoration, so you can
+bind it directly:
+
+```zsh
+bindkey '^T' "krill suggest --inline"
+```
+
+Safety: destructive commands (rm, drop, force-push, shutdown) are flagged
+with a warning line before the command; `--inline` suppresses the warning.
+
+## Security & privacy
