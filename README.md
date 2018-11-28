@@ -190,3 +190,14 @@ Safety: destructive commands (rm, drop, force-push, shutdown) are flagged
 with a warning line before the command; `--inline` suppresses the warning.
 
 ## Security & privacy
+
+- **Nothing leaves the machine.** The only network connection is the local
+  Ollama socket. There is no telemetry, no update phone-home, no analytics.
+- **Cache is local** and TTL-managed (`~/.cache/krill/`); it never stores
+  full diffs, only model responses and model lists.
+- **No credentials.** krill never reads `.env`, SSH keys, or token files.
+- **Prompt bounds.** Context collection is capped by config; oversized
+  files are truncated with a marker, never silently dropped.
+
+See `docs/privacy.md` for the full data-flow walkthrough.
+
