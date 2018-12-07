@@ -201,3 +201,15 @@ with a warning line before the command; `--inline` suppresses the warning.
 
 See `docs/privacy.md` for the full data-flow walkthrough.
 
+## Performance
+
+Measured on a 2021 MBP, M1, 16GB, `qwen2.5-coder:7b` via Ollama:
+
+| Operation | Time |
+|---|---|
+| Context collection (blame + diff + log, parallel) | ~40ms |
+| Prompt assembly (bounded, cached templates) | <1ms |
+| First token (7b, quantized) | ~300ms |
+| Full answer (avg 200 tokens) | ~4s |
+
+Context collection is the only part that scales with repo size, and it is
