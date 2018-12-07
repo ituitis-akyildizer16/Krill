@@ -224,3 +224,15 @@ make test       # go test ./... -race
 make lint       # golangci-lint run
 make completions # regenerate shell completions
 ```
+
+The codebase is organized as small internal packages with no circular
+dependencies:
+
+```
+internal/
+├── cli/       # cobra command tree
+├── config/    # TOML config load/save
+├── git/       # blame, diff, log, status (pure exec wrappers)
+├── ollama/    # local model client
+├── prompt/    # template + bounded context assembly
+├── suggest/   # NL → command + safety checks
