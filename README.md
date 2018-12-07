@@ -213,3 +213,14 @@ Measured on a 2021 MBP, M1, 16GB, `qwen2.5-coder:7b` via Ollama:
 | Full answer (avg 200 tokens) | ~4s |
 
 Context collection is the only part that scales with repo size, and it is
+bounded by `max_blame_lines` / `max_diff_lines` before the model is ever
+called.
+
+## Development
+
+```bash
+make build      # go build ./cmd/krill
+make test       # go test ./... -race
+make lint       # golangci-lint run
+make completions # regenerate shell completions
+```
