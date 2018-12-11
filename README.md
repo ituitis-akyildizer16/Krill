@@ -236,3 +236,15 @@ internal/
 ├── ollama/    # local model client
 ├── prompt/    # template + bounded context assembly
 ├── suggest/   # NL → command + safety checks
+├── output/    # terminal rendering (spinner, markdown, color)
+├── cache/     # on-disk TTL cache
+└── runner/    # orchestration of the above
+```
+
+## Known limitations
+
+- Answer quality is bounded by the local model; a 7b coding model is
+  helpful but not frontier-grade.
+- `git blame` on huge files is truncated by config — answers may miss
+  context beyond the cap.
+- First-run model download is large (several GB for 7b) and slow.
