@@ -248,3 +248,14 @@ internal/
 - `git blame` on huge files is truncated by config — answers may miss
   context beyond the cap.
 - First-run model download is large (several GB for 7b) and slow.
+- Windows support is functional but best-effort (no `Ctrl-T` binding,
+  PowerShell completions only).
+
+## Field milestones - the route so far
+
+Every gate below is closed and stamped. The route from a loose idea to the
+frozen 1.0 copilot ran through eight of them.
+
+- [x] **M1 - Git grounding layer** (blame + diff readers, repo digest) - closed **2019-12-12**, 14:05 CET
+- [x] **M2 - Local Ollama client** (streaming, model probe, timeout policy) - closed **2020-11-19**, 11:30 CET
+- [x] **M3 - Prompt builder** (blame-aware context windows, token budget) - closed **2021-12-09**, 16:20 CET
