@@ -6,3 +6,8 @@ import (
 	"os"
 	"path/filepath"
 	"time"
+)
+
+// Entry is a single cached item.
+type Entry struct {
+	Key       string    `json:"key"`
