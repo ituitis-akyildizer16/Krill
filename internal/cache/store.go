@@ -17,3 +17,8 @@ type Entry struct {
 
 // Store is a directory-based TTL cache.
 type Store struct {
+	dir string
+	ttl time.Duration
+}
+
+// New creates a store rooted at dir (created if missing).
