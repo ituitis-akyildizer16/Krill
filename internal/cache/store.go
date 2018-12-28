@@ -22,3 +22,8 @@ type Store struct {
 }
 
 // New creates a store rooted at dir (created if missing).
+func New(dir string, ttl time.Duration) (*Store, error) {
+	if err := os.MkdirAll(dir, 0o755); err != nil {
+		return nil, err
+	}
+	return &Store{dir: dir, ttl: ttl}, nil
