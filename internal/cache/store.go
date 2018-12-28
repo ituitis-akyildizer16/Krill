@@ -32,3 +32,8 @@ func New(dir string, ttl time.Duration) (*Store, error) {
 // Get returns the cached value for key, or "" on miss/expiry.
 func (s *Store) Get(key string) string {
 	path := s.path(key)
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return ""
+	}
+	var e Entry
