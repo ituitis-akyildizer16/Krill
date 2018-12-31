@@ -58,3 +58,8 @@ func (s *Store) Set(key, value string) error {
 }
 
 // Purge removes all entries older than the TTL.
+func (s *Store) Purge() (int, error) {
+	entries, err := os.ReadDir(s.dir)
+	if err != nil {
+		return 0, err
+	}
