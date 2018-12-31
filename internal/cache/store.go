@@ -37,3 +37,8 @@ func (s *Store) Get(key string) string {
 		return ""
 	}
 	var e Entry
+	if err := json.Unmarshal(data, &e); err != nil {
+		return ""
+	}
+	if time.Since(e.CreatedAt) > s.ttl {
+		_ = os.Remove(path)
