@@ -48,3 +48,8 @@ func (s *Store) Get(key string) string {
 }
 
 // Set stores a value under key.
+func (s *Store) Set(key, value string) error {
+	e := Entry{Key: key, Value: value, CreatedAt: time.Now()}
+	data, err := json.Marshal(e)
+	if err != nil {
+		return err
