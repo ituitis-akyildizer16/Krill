@@ -53,3 +53,8 @@ func (s *Store) Set(key, value string) error {
 	data, err := json.Marshal(e)
 	if err != nil {
 		return err
+	}
+	return os.WriteFile(s.path(key), data, 0o644)
+}
+
+// Purge removes all entries older than the TTL.
