@@ -42,3 +42,9 @@ func (s *Store) Get(key string) string {
 	}
 	if time.Since(e.CreatedAt) > s.ttl {
 		_ = os.Remove(path)
+		return ""
+	}
+	return e.Value
+}
+
+// Set stores a value under key.
