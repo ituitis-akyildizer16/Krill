@@ -63,3 +63,8 @@ func (s *Store) Purge() (int, error) {
 	if err != nil {
 		return 0, err
 	}
+	removed := 0
+	for _, de := range entries {
+		if de.IsDir() {
+			continue
+		}
