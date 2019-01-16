@@ -68,3 +68,8 @@ func (s *Store) Purge() (int, error) {
 		if de.IsDir() {
 			continue
 		}
+		p := filepath.Join(s.dir, de.Name())
+		data, err := os.ReadFile(p)
+		if err != nil {
+			continue
+		}
