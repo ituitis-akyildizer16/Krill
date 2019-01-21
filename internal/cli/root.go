@@ -35,3 +35,12 @@ func NewRootCommand() *cobra.Command {
 		newAskCommand(cfg),
 		newSuggestCommand(cfg),
 		newReviewCommand(cfg),
+		newStatusCommand(cfg),
+		newInitCommand(cfg),
+		newModelsCommand(cfg),
+		newVersionCommand(),
+	)
+
+	return root
+}
+
