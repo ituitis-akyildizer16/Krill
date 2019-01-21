@@ -16,3 +16,12 @@ import (
 // Version is overridden at build time via -ldflags.
 var Version = "0.9.2"
 
+// NewRootCommand builds the full command tree.
+func NewRootCommand() *cobra.Command {
+	cfg, err := config.Load(config.DefaultPath())
+	if err != nil {
+		cfg = config.Defaults()
+	}
+
+	root := &cobra.Command{
+		Use:   "krill",
