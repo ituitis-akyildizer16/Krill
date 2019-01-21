@@ -44,3 +44,13 @@ func NewRootCommand() *cobra.Command {
 	return root
 }
 
+func newAskCommand(cfg *config.Config) *cobra.Command {
+	var file string
+	var contextOnly bool
+	cmd := &cobra.Command{
+		Use:   "ask [question]",
+		Short: "Ask a question about the current repo",
+		Args:  cobra.MinimumNArgs(1),
+		RunE: func(cmd *cobra.Command, args []string) error {
+			q := joinArgs(args)
+			out, err := runner.Ask(context.Background(), cfg, q, file, contextOnly)
