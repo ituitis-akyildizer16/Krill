@@ -54,3 +54,12 @@ func newAskCommand(cfg *config.Config) *cobra.Command {
 		RunE: func(cmd *cobra.Command, args []string) error {
 			q := joinArgs(args)
 			out, err := runner.Ask(context.Background(), cfg, q, file, contextOnly)
+			if err != nil {
+				return fmt.Errorf("ask: %w", err)
+			}
+			fmt.Println(out)
+			return nil
+		},
+	}
+	cmd.Flags().StringVarP(&file, "file", "f", "", "limit context to this file")
+	cmd.Flags().BoolVar(&contextOnly, "context-only", false,
