@@ -25,3 +25,13 @@ func NewRootCommand() *cobra.Command {
 
 	root := &cobra.Command{
 		Use:   "krill",
+		Short: "Local-first terminal AI copilot",
+		Long: "krill answers questions about your repo, suggests shell commands,\n" +
+			"and summarizes diffs - all through a local Ollama model.",
+		SilenceUsage: true,
+	}
+
+	root.AddCommand(
+		newAskCommand(cfg),
+		newSuggestCommand(cfg),
+		newReviewCommand(cfg),
