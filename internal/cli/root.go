@@ -63,3 +63,13 @@ func newAskCommand(cfg *config.Config) *cobra.Command {
 	}
 	cmd.Flags().StringVarP(&file, "file", "f", "", "limit context to this file")
 	cmd.Flags().BoolVar(&contextOnly, "context-only", false,
+		"print the assembled context without calling the model")
+	return cmd
+}
+
+func newSuggestCommand(cfg *config.Config) *cobra.Command {
+	var inline bool
+	var shell string
+	cmd := &cobra.Command{
+		Use:   "suggest [what you want to do]",
+		Short: "Suggest a shell command for what you want",
