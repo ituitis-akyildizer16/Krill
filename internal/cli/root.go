@@ -73,3 +73,12 @@ func newSuggestCommand(cfg *config.Config) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "suggest [what you want to do]",
 		Short: "Suggest a shell command for what you want",
+		Args:  cobra.MinimumNArgs(1),
+		RunE: func(cmd *cobra.Command, args []string) error {
+			want := joinArgs(args)
+			sh := shell
+			if sh == "" {
+				sh = cfg.Shell
+			}
+			cmdline, warning, err := runner.Suggest(context.Background(), cfg, want, sh, inline)
+			if err != nil {
