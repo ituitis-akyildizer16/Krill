@@ -82,3 +82,13 @@ func newSuggestCommand(cfg *config.Config) *cobra.Command {
 			}
 			cmdline, warning, err := runner.Suggest(context.Background(), cfg, want, sh, inline)
 			if err != nil {
+				return fmt.Errorf("suggest: %w", err)
+			}
+			if warning != "" && !inline {
+				fmt.Fprintln(os.Stderr, warning)
+			}
+			fmt.Println(cmdline)
+			return nil
+		},
+	}
+	cmd.Flags().BoolVar(&inline, "inline", false,
