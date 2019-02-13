@@ -92,3 +92,12 @@ func newSuggestCommand(cfg *config.Config) *cobra.Command {
 		},
 	}
 	cmd.Flags().BoolVar(&inline, "inline", false,
+		"suppress safety warnings (for keybindings)")
+	cmd.Flags().StringVar(&shell, "shell", "", "target shell (bash|zsh|fish|powershell)")
+	return cmd
+}
+
+func newReviewCommand(cfg *config.Config) *cobra.Command {
+	var staged bool
+	cmd := &cobra.Command{
+		Use:   "review",
