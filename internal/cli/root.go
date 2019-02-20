@@ -101,3 +101,13 @@ func newReviewCommand(cfg *config.Config) *cobra.Command {
 	var staged bool
 	cmd := &cobra.Command{
 		Use:   "review",
+		Short: "Summarize the current diff",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			out, err := runner.Review(context.Background(), cfg, staged)
+			if err != nil {
+				return fmt.Errorf("review: %w", err)
+			}
+			fmt.Println(out)
+			return nil
+		},
+	}
