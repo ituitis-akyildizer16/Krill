@@ -111,3 +111,12 @@ func newReviewCommand(cfg *config.Config) *cobra.Command {
 			return nil
 		},
 	}
+	cmd.Flags().BoolVar(&staged, "staged", true, "summarize the staged diff")
+	return cmd
+}
+
+func newStatusCommand(cfg *config.Config) *cobra.Command {
+	return &cobra.Command{
+		Use:   "status",
+		Short: "Show a repo digest with hints",
+		RunE: func(cmd *cobra.Command, args []string) error {
