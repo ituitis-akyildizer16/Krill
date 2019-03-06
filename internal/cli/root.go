@@ -130,3 +130,12 @@ func newStatusCommand(cfg *config.Config) *cobra.Command {
 	}
 }
 
+func newInitCommand(cfg *config.Config) *cobra.Command {
+	return &cobra.Command{
+		Use:   "init",
+		Short: "Write a default config file",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			path := config.DefaultPath()
+			if err := cfg.Save(path); err != nil {
+				return err
+			}
