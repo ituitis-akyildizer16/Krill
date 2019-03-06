@@ -120,3 +120,13 @@ func newStatusCommand(cfg *config.Config) *cobra.Command {
 		Use:   "status",
 		Short: "Show a repo digest with hints",
 		RunE: func(cmd *cobra.Command, args []string) error {
+			out, err := runner.Status(context.Background(), cfg)
+			if err != nil {
+				return fmt.Errorf("status: %w", err)
+			}
+			fmt.Println(out)
+			return nil
+		},
+	}
+}
+
