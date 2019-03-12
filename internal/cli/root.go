@@ -139,3 +139,13 @@ func newInitCommand(cfg *config.Config) *cobra.Command {
 			if err := cfg.Save(path); err != nil {
 				return err
 			}
+			fmt.Printf("wrote %s\n", path)
+			return nil
+		},
+	}
+}
+
+func newModelsCommand(cfg *config.Config) *cobra.Command {
+	return &cobra.Command{
+		Use:   "models",
+		Short: "List models on the local Ollama server",
