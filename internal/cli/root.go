@@ -149,3 +149,12 @@ func newModelsCommand(cfg *config.Config) *cobra.Command {
 	return &cobra.Command{
 		Use:   "models",
 		Short: "List models on the local Ollama server",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			names, err := runner.Models(context.Background(), cfg)
+			if err != nil {
+				return fmt.Errorf("models: %w", err)
+			}
+			for _, n := range names {
+				fmt.Println(n)
+			}
+			return nil
