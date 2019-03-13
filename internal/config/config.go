@@ -17,3 +17,10 @@ type Config struct {
 	Theme    string   `toml:"theme"`
 	CacheTTL int      `toml:"cache_ttl_seconds"`
 	NoColor  bool     `toml:"no_color"`
+	Context  Context  `toml:"context"`
+	Ollama   Ollama   `toml:"ollama"`
+	Suggest  Suggest  `toml:"suggest"`
+	Plugins  Plugins  `toml:"plugins"`
+	Ignore   []string `toml:"ignore"`
+}
+
