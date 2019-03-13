@@ -24,3 +24,10 @@ type Config struct {
 	Ignore   []string `toml:"ignore"`
 }
 
+// Context controls how much repo context is collected.
+type Context struct {
+	MaxBlameLines int `toml:"max_blame_lines"`
+	MaxDiffLines  int `toml:"max_diff_lines"`
+	HistoryDays   int `toml:"history_days"`
+}
+
