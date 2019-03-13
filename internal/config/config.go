@@ -31,3 +31,10 @@ type Context struct {
 	HistoryDays   int `toml:"history_days"`
 }
 
+// Ollama holds the local model server connection.
+type Ollama struct {
+	URL     string `toml:"url"`
+	Timeout int    `toml:"timeout_seconds"`
+}
+
+// Suggest tunes the NL-to-command flow.
