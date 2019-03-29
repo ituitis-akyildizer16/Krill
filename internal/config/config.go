@@ -66,3 +66,10 @@ func Defaults() *Config {
 			HistoryDays:   14,
 		},
 		Ollama: Ollama{
+			URL:     "http://localhost:11434",
+			Timeout: 120,
+		},
+		Suggest: Suggest{
+			MaxTokens:     60,
+			UseLocalModel: true,
+			DenyPatterns:  []string{"rm -rf /", "mkfs", ":(){"},
