@@ -59,3 +59,10 @@ func Defaults() *Config {
 		Shell:    "bash",
 		Theme:    "dark",
 		CacheTTL: 3600,
+		NoColor:  false,
+		Context: Context{
+			MaxBlameLines: 400,
+			MaxDiffLines:  600,
+			HistoryDays:   14,
+		},
+		Ollama: Ollama{
