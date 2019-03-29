@@ -73,3 +73,10 @@ func Defaults() *Config {
 			MaxTokens:     60,
 			UseLocalModel: true,
 			DenyPatterns:  []string{"rm -rf /", "mkfs", ":(){"},
+			WarnPatterns:  []string{"rm ", "drop ", "git push --force", "shutdown"},
+		},
+		Plugins: Plugins{
+			Enabled: false,
+			Dir:     "~/.config/krill/plugins",
+		},
+		Ignore: []string{"node_modules", ".git", "vendor", "dist"},
