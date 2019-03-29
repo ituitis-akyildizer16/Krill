@@ -52,3 +52,10 @@ type Plugins struct {
 	Providers []string `toml:"providers"`
 }
 
+// Defaults returns the built-in defaults.
+func Defaults() *Config {
+	return &Config{
+		Model:    "qwen2.5-coder:7b",
+		Shell:    "bash",
+		Theme:    "dark",
+		CacheTTL: 3600,
