@@ -38,3 +38,10 @@ type Ollama struct {
 }
 
 // Suggest tunes the NL-to-command flow.
+type Suggest struct {
+	MaxTokens     int      `toml:"max_tokens"`
+	DenyPatterns  []string `toml:"deny_patterns"`
+	WarnPatterns  []string `toml:"warn_patterns"`
+	UseLocalModel bool     `toml:"use_local_model"`
+}
+
