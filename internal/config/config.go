@@ -45,3 +45,10 @@ type Suggest struct {
 	UseLocalModel bool     `toml:"use_local_model"`
 }
 
+// Plugins configures the Python plugin SDK bridge.
+type Plugins struct {
+	Enabled  bool     `toml:"enabled"`
+	Dir      string   `toml:"dir"`
+	Providers []string `toml:"providers"`
+}
+
