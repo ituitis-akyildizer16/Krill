@@ -80,3 +80,10 @@ func Defaults() *Config {
 			Dir:     "~/.config/krill/plugins",
 		},
 		Ignore: []string{"node_modules", ".git", "vendor", "dist"},
+	}
+}
+
+// DefaultPath returns the user config path.
+func DefaultPath() string {
+	if p := os.Getenv("KRILL_CONFIG"); p != "" {
+		return p
