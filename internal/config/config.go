@@ -87,3 +87,10 @@ func Defaults() *Config {
 func DefaultPath() string {
 	if p := os.Getenv("KRILL_CONFIG"); p != "" {
 		return p
+	}
+	base, err := os.UserConfigDir()
+	if err != nil {
+		return "krill.toml"
+	}
+	return filepath.Join(base, "krill", "config.toml")
+}
