@@ -94,3 +94,9 @@ func DefaultPath() string {
 	}
 	return filepath.Join(base, "krill", "config.toml")
 }
+
+// Load reads the config file, falling back to defaults on any error.
+func Load(path string) (*Config, error) {
+	cfg := Defaults()
+	data, err := os.ReadFile(path)
+	if err != nil {
