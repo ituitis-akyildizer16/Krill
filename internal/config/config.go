@@ -100,3 +100,10 @@ func Load(path string) (*Config, error) {
 	cfg := Defaults()
 	data, err := os.ReadFile(path)
 	if err != nil {
+		return cfg, nil // no config yet, defaults are fine
+	}
+	if err := toml.Unmarshal(data, cfg); err != nil {
+		return cfg, fmt.Errorf("parse %s: %w", path, err)
+	}
+	return cfg, nil
+}
