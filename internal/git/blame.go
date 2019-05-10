@@ -21,3 +21,8 @@ type BlameLine struct {
 func (r *Runner) Blame(ctx context.Context, path string, maxLines int) ([]BlameLine, error) {
 	out, err := r.Exec(ctx, "blame", "--porcelain", "--", path)
 	if err != nil {
+		return nil, err
+	}
+	return parseBlame(out, maxLines)
+}
+
