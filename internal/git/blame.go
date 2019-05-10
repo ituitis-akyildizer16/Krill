@@ -16,3 +16,8 @@ type BlameLine struct {
 }
 
 // Blame returns up to maxLines lines of porcelain blame for a path,
+// newest-first is NOT guaranteed; git returns file order. We keep file
+// order so line numbers stay meaningful.
+func (r *Runner) Blame(ctx context.Context, path string, maxLines int) ([]BlameLine, error) {
+	out, err := r.Exec(ctx, "blame", "--porcelain", "--", path)
+	if err != nil {
