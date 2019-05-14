@@ -26,3 +26,8 @@ func (r *Runner) Blame(ctx context.Context, path string, maxLines int) ([]BlameL
 	return parseBlame(out, maxLines)
 }
 
+func parseBlame(out string, maxLines int) ([]BlameLine, error) {
+	lines := strings.Split(out, "\n")
+	var result []BlameLine
+	var commit, author, ts string
+	for _, line := range lines {
