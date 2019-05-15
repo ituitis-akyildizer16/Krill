@@ -31,3 +31,8 @@ func parseBlame(out string, maxLines int) ([]BlameLine, error) {
 	var result []BlameLine
 	var commit, author, ts string
 	for _, line := range lines {
+		if line == "" {
+			continue
+		}
+		if strings.HasPrefix(line, "\t") {
+			result = append(result, BlameLine{
