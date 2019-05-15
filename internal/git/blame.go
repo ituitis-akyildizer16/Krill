@@ -41,3 +41,8 @@ func parseBlame(out string, maxLines int) ([]BlameLine, error) {
 				Timestamp: ts,
 				LineNo:    len(result) + 1,
 				Content:   strings.TrimPrefix(line, "\t"),
+			})
+			if maxLines > 0 && len(result) >= maxLines {
+				break
+			}
+			continue
