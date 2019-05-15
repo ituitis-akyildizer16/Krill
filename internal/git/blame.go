@@ -36,3 +36,8 @@ func parseBlame(out string, maxLines int) ([]BlameLine, error) {
 		}
 		if strings.HasPrefix(line, "\t") {
 			result = append(result, BlameLine{
+				Commit:    commit,
+				Author:    author,
+				Timestamp: ts,
+				LineNo:    len(result) + 1,
+				Content:   strings.TrimPrefix(line, "\t"),
