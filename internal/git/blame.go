@@ -56,3 +56,9 @@ func parseBlame(out string, maxLines int) ([]BlameLine, error) {
 		}
 	}
 	return result, nil
+}
+
+// isCommitLine reports whether line is a porcelain block header
+// (40-hex SHA, optionally boundary-marked with ^).
+func isCommitLine(line string) bool {
+	s := line
