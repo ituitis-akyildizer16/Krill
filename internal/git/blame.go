@@ -51,3 +51,8 @@ func parseBlame(out string, maxLines int) ([]BlameLine, error) {
 			author = strings.TrimPrefix(line, "author ")
 		} else if strings.HasPrefix(line, "author-time ") {
 			ts = strings.TrimPrefix(line, "author-time ")
+		} else if isCommitLine(line) {
+			commit = strings.TrimPrefix(line, "^")[:40]
+		}
+	}
+	return result, nil
