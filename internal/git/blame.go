@@ -62,3 +62,8 @@ func parseBlame(out string, maxLines int) ([]BlameLine, error) {
 // (40-hex SHA, optionally boundary-marked with ^).
 func isCommitLine(line string) bool {
 	s := line
+	if strings.HasPrefix(s, "^") {
+		s = s[1:]
+	}
+	if len(s) < 40 {
+		return false
