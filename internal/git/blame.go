@@ -67,3 +67,8 @@ func isCommitLine(line string) bool {
 	}
 	if len(s) < 40 {
 		return false
+	}
+	for _, c := range s[:40] {
+		if !(c >= '0' && c <= '9' || c >= 'a' && c <= 'f') {
+			return false
+		}
