@@ -17,3 +17,6 @@ author-tz +0000
 	return 0
 }
 `
+	lines, err := parseBlame(out, 0)
+	if err != nil {
+		t.Fatal(err)
