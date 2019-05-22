@@ -11,3 +11,6 @@ author-tz +0000
 	func retry() {
 b91e0aa1f2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f 2 2
 author Bob
+author-mail <bob@example.com>
+author-time 1710000000
+author-tz +0000
