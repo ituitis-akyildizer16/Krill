@@ -14,3 +14,6 @@ author Bob
 author-mail <bob@example.com>
 author-time 1710000000
 author-tz +0000
+	return 0
+}
+`
