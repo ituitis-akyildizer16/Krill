@@ -20,3 +20,6 @@ author-tz +0000
 	lines, err := parseBlame(out, 0)
 	if err != nil {
 		t.Fatal(err)
+	}
+	if len(lines) != 2 {
+		t.Fatalf("want 2 lines, got %d", len(lines))
