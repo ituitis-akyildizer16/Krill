@@ -32,3 +32,6 @@ author-tz +0000
 	}
 	if lines[0].Content != "func retry() {" {
 		t.Errorf("first content = %q", lines[0].Content)
+	}
+	if lines[1].Commit[:8] != "b91e0aa1" {
+		t.Errorf("second commit = %q", lines[1].Commit)
