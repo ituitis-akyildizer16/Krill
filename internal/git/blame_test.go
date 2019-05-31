@@ -26,3 +26,6 @@ author-tz +0000
 	}
 	if lines[0].Commit[:8] != "4c8a1f3a" {
 		t.Errorf("first commit = %q", lines[0].Commit)
+	}
+	if lines[0].Author != "Alice" {
+		t.Errorf("first author = %q", lines[0].Author)
