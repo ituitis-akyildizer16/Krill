@@ -38,3 +38,6 @@ author-tz +0000
 	}
 }
 
+func TestParseBlameMaxLines(t *testing.T) {
+	out := "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 1 1\nauthor A\n\t1\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb 2 2\nauthor B\n\t2\ncccccccccccccccccccccccccccccccccccccccc 3 3\nauthor C\n\t3\n"
+	lines, err := parseBlame(out, 2)
