@@ -29,3 +29,6 @@ author-tz +0000
 	}
 	if lines[0].Author != "Alice" {
 		t.Errorf("first author = %q", lines[0].Author)
+	}
+	if lines[0].Content != "func retry() {" {
+		t.Errorf("first content = %q", lines[0].Content)
