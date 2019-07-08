@@ -19,3 +19,7 @@ func (r *Runner) Diff(ctx context.Context, staged bool, maxLines int) (string, e
 		return "", err
 	}
 	if maxLines > 0 {
+		lines := strings.Split(out, "\n")
+		if len(lines) > maxLines {
+			lines = append(lines[:maxLines], "... (truncated)")
+		}
