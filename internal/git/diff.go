@@ -11,3 +11,7 @@ import (
 func (r *Runner) Diff(ctx context.Context, staged bool, maxLines int) (string, error) {
 	args := []string{"diff"}
 	if staged {
+		args = append(args, "--cached")
+	}
+	args = append(args, "--stat", "--patch", "--no-color")
+	out, err := r.Exec(ctx, args...)
