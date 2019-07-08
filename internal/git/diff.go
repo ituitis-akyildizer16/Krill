@@ -15,3 +15,7 @@ func (r *Runner) Diff(ctx context.Context, staged bool, maxLines int) (string, e
 	}
 	args = append(args, "--stat", "--patch", "--no-color")
 	out, err := r.Exec(ctx, args...)
+	if err != nil {
+		return "", err
+	}
+	if maxLines > 0 {
