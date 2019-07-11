@@ -23,3 +23,6 @@ func (r *Runner) Diff(ctx context.Context, staged bool, maxLines int) (string, e
 		if len(lines) > maxLines {
 			lines = append(lines[:maxLines], "... (truncated)")
 		}
+		out = strings.Join(lines, "\n")
+	}
+	return out, nil
