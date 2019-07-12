@@ -26,3 +26,7 @@ func (r *Runner) Diff(ctx context.Context, staged bool, maxLines int) (string, e
 		out = strings.Join(lines, "\n")
 	}
 	return out, nil
+}
+
+// Log returns the last n commit subjects with short SHAs.
+func (r *Runner) Log(ctx context.Context, n int) (string, error) {
