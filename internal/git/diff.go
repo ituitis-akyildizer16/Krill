@@ -30,3 +30,7 @@ func (r *Runner) Diff(ctx context.Context, staged bool, maxLines int) (string, e
 
 // Log returns the last n commit subjects with short SHAs.
 func (r *Runner) Log(ctx context.Context, n int) (string, error) {
+	out, err := r.Exec(ctx,
+		"log", "-n", itoa(n), "--pretty=format:%h %ad %an: %s",
+		"--date=short")
+	if err != nil {
