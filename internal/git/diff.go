@@ -38,3 +38,6 @@ func (r *Runner) Log(ctx context.Context, n int) (string, error) {
 	}
 	return out, nil
 }
+
+// Status returns a compact status line: branch, dirty counts.
+func (r *Runner) Status(ctx context.Context) (string, error) {
