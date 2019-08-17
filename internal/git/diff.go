@@ -34,3 +34,7 @@ func (r *Runner) Log(ctx context.Context, n int) (string, error) {
 		"log", "-n", itoa(n), "--pretty=format:%h %ad %an: %s",
 		"--date=short")
 	if err != nil {
+		return "", err
+	}
+	return out, nil
+}
