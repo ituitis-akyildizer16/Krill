@@ -41,3 +41,7 @@ func (r *Runner) Log(ctx context.Context, n int) (string, error) {
 
 // Status returns a compact status line: branch, dirty counts.
 func (r *Runner) Status(ctx context.Context) (string, error) {
+	branch, err := r.Exec(ctx, "rev-parse", "--abbrev-ref", "HEAD")
+	if err != nil {
+		return "", err
+	}
