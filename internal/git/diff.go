@@ -45,3 +45,7 @@ func (r *Runner) Status(ctx context.Context) (string, error) {
 	if err != nil {
 		return "", err
 	}
+	porcelain, err := r.Exec(ctx, "status", "--porcelain")
+	if err != nil {
+		return "", err
+	}
