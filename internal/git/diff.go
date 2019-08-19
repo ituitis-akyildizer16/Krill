@@ -49,3 +49,7 @@ func (r *Runner) Status(ctx context.Context) (string, error) {
 	if err != nil {
 		return "", err
 	}
+	lines := strings.Split(porcelain, "\n")
+	dirty := 0
+	for _, l := range lines {
+		if strings.TrimSpace(l) != "" {
