@@ -4,3 +4,6 @@
 // parse its output. Commands are bounded by context, never by timeouts
 // that would corrupt the output.
 package git
+
+import (
+	"bytes"
