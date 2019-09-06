@@ -15,3 +15,6 @@ import (
 // Runner executes git commands in the repo root.
 type Runner struct {
 	dir string
+}
+
+// New locates the repo root from startDir and returns a Runner.
