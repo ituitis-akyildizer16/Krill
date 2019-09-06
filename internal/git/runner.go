@@ -11,3 +11,7 @@ import (
 	"os/exec"
 	"strings"
 )
+
+// Runner executes git commands in the repo root.
+type Runner struct {
+	dir string
