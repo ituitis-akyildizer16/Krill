@@ -25,3 +25,7 @@ func New(startDir string) (*Runner, error) {
 	}
 	return &Runner{dir: strings.TrimSpace(string(out))}, nil
 }
+
+// Dir returns the repo root.
+func (r *Runner) Dir() string { return r.dir }
+
