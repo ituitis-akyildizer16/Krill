@@ -22,3 +22,6 @@ func New(startDir string) (*Runner, error) {
 	out, err := exec.Command("git", "-C", startDir, "rev-parse", "--show-toplevel").Output()
 	if err != nil {
 		return nil, err
+	}
+	return &Runner{dir: strings.TrimSpace(string(out))}, nil
+}
