@@ -18,3 +18,7 @@ type Runner struct {
 }
 
 // New locates the repo root from startDir and returns a Runner.
+func New(startDir string) (*Runner, error) {
+	out, err := exec.Command("git", "-C", startDir, "rev-parse", "--show-toplevel").Output()
+	if err != nil {
+		return nil, err
