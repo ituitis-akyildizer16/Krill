@@ -29,3 +29,7 @@ func New(startDir string) (*Runner, error) {
 // Dir returns the repo root.
 func (r *Runner) Dir() string { return r.dir }
 
+// Exec runs `git <args...>` and returns trimmed stdout.
+func (r *Runner) Exec(ctx context.Context, args ...string) (string, error) {
+	cmd := exec.CommandContext(ctx, "git", append([]string{"-C", r.dir}, args...)...)
+	var stdout, stderr bytes.Buffer
