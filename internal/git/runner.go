@@ -36,3 +36,7 @@ func (r *Runner) Exec(ctx context.Context, args ...string) (string, error) {
 	cmd.Stdout = &stdout
 	cmd.Stderr = &stderr
 	if err := cmd.Run(); err != nil {
+		return "", &GitError{Args: args, Err: err, Stderr: stderr.String()}
+	}
+	return strings.TrimRight(stdout.String(), "\n"), nil
+}
