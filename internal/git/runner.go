@@ -40,3 +40,7 @@ func (r *Runner) Exec(ctx context.Context, args ...string) (string, error) {
 	}
 	return strings.TrimRight(stdout.String(), "\n"), nil
 }
+
+// GitError wraps a failed git invocation.
+type GitError struct {
+	Args   []string
