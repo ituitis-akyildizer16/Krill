@@ -44,3 +44,6 @@ func (r *Runner) Exec(ctx context.Context, args ...string) (string, error) {
 // GitError wraps a failed git invocation.
 type GitError struct {
 	Args   []string
+	Err    error
+	Stderr string
+}
