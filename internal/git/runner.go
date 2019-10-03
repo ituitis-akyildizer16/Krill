@@ -47,3 +47,7 @@ type GitError struct {
 	Err    error
 	Stderr string
 }
+
+func (e *GitError) Error() string {
+	return "git " + strings.Join(e.Args, " ") + ": " + e.Stderr
+}
