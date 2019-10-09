@@ -9,3 +9,9 @@ import (
 	"io"
 	"net/http"
 	"time"
+)
+
+// Client talks to a local Ollama instance.
+type Client struct {
+	BaseURL string
+	HTTP    *http.Client
