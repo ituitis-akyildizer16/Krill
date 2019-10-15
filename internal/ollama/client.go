@@ -28,3 +28,9 @@ func New(baseURL string, timeoutSeconds int) *Client {
 }
 
 // GenerateRequest mirrors the Ollama /api/generate payload we use.
+type GenerateRequest struct {
+	Model    string `json:"model"`
+	Prompt   string `json:"prompt"`
+	Stream   bool   `json:"stream"`
+	Options  any    `json:"options,omitempty"`
+	Format   string `json:"format,omitempty"`
