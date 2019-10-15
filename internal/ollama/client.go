@@ -34,3 +34,9 @@ type GenerateRequest struct {
 	Stream   bool   `json:"stream"`
 	Options  any    `json:"options,omitempty"`
 	Format   string `json:"format,omitempty"`
+	System   string `json:"system,omitempty"`
+}
+
+// GenerateResponse is a single (non-streaming) generation result.
+type GenerateResponse struct {
+	Model     string `json:"model"`
