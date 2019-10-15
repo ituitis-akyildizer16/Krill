@@ -22,3 +22,9 @@ func New(baseURL string, timeoutSeconds int) *Client {
 	return &Client{
 		BaseURL: baseURL,
 		HTTP: &http.Client{
+			Timeout: time.Duration(timeoutSeconds) * time.Second,
+		},
+	}
+}
+
+// GenerateRequest mirrors the Ollama /api/generate payload we use.
