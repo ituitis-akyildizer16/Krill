@@ -15,3 +15,10 @@ import (
 type Client struct {
 	BaseURL string
 	HTTP    *http.Client
+}
+
+// New creates a client with the given base URL and timeout.
+func New(baseURL string, timeoutSeconds int) *Client {
+	return &Client{
+		BaseURL: baseURL,
+		HTTP: &http.Client{
