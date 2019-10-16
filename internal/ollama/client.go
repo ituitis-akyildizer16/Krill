@@ -40,3 +40,10 @@ type GenerateRequest struct {
 // GenerateResponse is a single (non-streaming) generation result.
 type GenerateResponse struct {
 	Model     string `json:"model"`
+	Response  string `json:"response"`
+	Done      bool   `json:"done"`
+	EvalCount int    `json:"eval_count"`
+}
+
+// Generate runs a non-streaming generation.
+func (c *Client) Generate(ctx context.Context, req GenerateRequest) (*GenerateResponse, error) {
