@@ -59,3 +59,10 @@ func (c *Client) Generate(ctx context.Context, req GenerateRequest) (*GenerateRe
 	httpReq.Header.Set("Content-Type", "application/json")
 
 	resp, err := c.HTTP.Do(httpReq)
+	if err != nil {
+		return nil, fmt.Errorf("ollama unreachable at %s (is `ollama serve` running?): %w",
+			c.BaseURL, err)
+	}
+	defer resp.Body.Close()
+	if resp.StatusCode != http.StatusOK {
+		data, _ := io.ReadAll(io.LimitReader(resp.Body, 4096))
