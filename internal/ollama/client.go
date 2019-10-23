@@ -53,3 +53,9 @@ func (c *Client) Generate(ctx context.Context, req GenerateRequest) (*GenerateRe
 	}
 	httpReq, err := http.NewRequestWithContext(ctx, http.MethodPost,
 		c.BaseURL+"/api/generate", bytes.NewReader(body))
+	if err != nil {
+		return nil, err
+	}
+	httpReq.Header.Set("Content-Type", "application/json")
+
+	resp, err := c.HTTP.Do(httpReq)
