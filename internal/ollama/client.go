@@ -47,3 +47,9 @@ type GenerateResponse struct {
 
 // Generate runs a non-streaming generation.
 func (c *Client) Generate(ctx context.Context, req GenerateRequest) (*GenerateResponse, error) {
+	body, err := json.Marshal(req)
+	if err != nil {
+		return nil, err
+	}
+	httpReq, err := http.NewRequestWithContext(ctx, http.MethodPost,
+		c.BaseURL+"/api/generate", bytes.NewReader(body))
