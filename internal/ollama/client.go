@@ -66,3 +66,9 @@ func (c *Client) Generate(ctx context.Context, req GenerateRequest) (*GenerateRe
 	defer resp.Body.Close()
 	if resp.StatusCode != http.StatusOK {
 		data, _ := io.ReadAll(io.LimitReader(resp.Body, 4096))
+		return nil, fmt.Errorf("ollama HTTP %d: %s", resp.StatusCode, string(data))
+	}
+	var out GenerateResponse
+	if err := json.NewDecoder(resp.Body).Decode(&out); err != nil {
+		return nil, err
+	}
