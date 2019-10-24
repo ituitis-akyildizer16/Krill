@@ -72,3 +72,9 @@ func (c *Client) Generate(ctx context.Context, req GenerateRequest) (*GenerateRe
 	if err := json.NewDecoder(resp.Body).Decode(&out); err != nil {
 		return nil, err
 	}
+	return &out, nil
+}
+
+// ListModels returns the names of models available locally.
+func (c *Client) ListModels(ctx context.Context) ([]string, error) {
+	httpReq, err := http.NewRequestWithContext(ctx, http.MethodGet,
