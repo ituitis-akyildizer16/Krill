@@ -7,3 +7,8 @@ import (
 	"os"
 	"strings"
 	"time"
+
+	"github.com/fatih/color"
+)
+
+// Renderer holds styling state.
