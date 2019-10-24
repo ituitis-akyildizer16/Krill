@@ -84,3 +84,10 @@ func (c *Client) ListModels(ctx context.Context) ([]string, error) {
 	}
 	resp, err := c.HTTP.Do(httpReq)
 	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var out struct {
+		Models []struct {
+			Name string `json:"name"`
+		} `json:"models"`
