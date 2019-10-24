@@ -91,3 +91,9 @@ func (c *Client) ListModels(ctx context.Context) ([]string, error) {
 		Models []struct {
 			Name string `json:"name"`
 		} `json:"models"`
+	}
+	if err := json.NewDecoder(resp.Body).Decode(&out); err != nil {
+		return nil, err
+	}
+	names := make([]string, 0, len(out.Models))
+	for _, m := range out.Models {
