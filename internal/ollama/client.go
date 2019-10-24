@@ -78,3 +78,9 @@ func (c *Client) Generate(ctx context.Context, req GenerateRequest) (*GenerateRe
 // ListModels returns the names of models available locally.
 func (c *Client) ListModels(ctx context.Context) ([]string, error) {
 	httpReq, err := http.NewRequestWithContext(ctx, http.MethodGet,
+		c.BaseURL+"/api/tags", nil)
+	if err != nil {
+		return nil, err
+	}
+	resp, err := c.HTTP.Do(httpReq)
+	if err != nil {
