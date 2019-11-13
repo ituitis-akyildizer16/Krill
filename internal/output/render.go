@@ -12,3 +12,8 @@ import (
 )
 
 // Renderer holds styling state.
+type Renderer struct {
+	NoColor bool
+	Out     io.Writer
+}
+
