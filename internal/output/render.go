@@ -17,3 +17,9 @@ type Renderer struct {
 	Out     io.Writer
 }
 
+// New returns a renderer writing to stdout.
+func New(noColor bool) *Renderer {
+	return &Renderer{NoColor: noColor, Out: os.Stdout}
+}
+
+// Header prints a section header.
