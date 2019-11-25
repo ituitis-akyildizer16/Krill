@@ -44,3 +44,9 @@ func (r *Renderer) Dim(text string) {
 func (r *Renderer) Warn(text string) {
 	if r.NoColor {
 		fmt.Fprintln(os.Stderr, text)
+		return
+	}
+	fmt.Fprintln(os.Stderr, color.New(color.FgYellow).Sprintf("! %s", text))
+}
+
+// Spinner is a minimal progress indicator.
