@@ -50,3 +50,8 @@ func (r *Renderer) Warn(text string) {
 }
 
 // Spinner is a minimal progress indicator.
+type Spinner struct {
+	stop chan struct{}
+	done chan struct{}
+}
+
