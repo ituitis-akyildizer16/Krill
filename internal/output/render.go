@@ -23,3 +23,8 @@ func New(noColor bool) *Renderer {
 }
 
 // Header prints a section header.
+func (r *Renderer) Header(text string) {
+	if r.NoColor {
+		fmt.Fprintf(r.Out, "== %s ==\n", text)
+		return
+	}
