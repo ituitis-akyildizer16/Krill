@@ -39,3 +39,8 @@ func (r *Renderer) Dim(text string) {
 	}
 	fmt.Fprintln(r.Out, color.New(color.FgHiBlack).Sprint(text))
 }
+
+// Warn prints a warning line to stderr.
+func (r *Renderer) Warn(text string) {
+	if r.NoColor {
+		fmt.Fprintln(os.Stderr, text)
