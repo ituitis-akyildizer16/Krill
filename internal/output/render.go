@@ -28,3 +28,9 @@ func (r *Renderer) Header(text string) {
 		fmt.Fprintf(r.Out, "== %s ==\n", text)
 		return
 	}
+	fmt.Fprintln(r.Out, color.New(color.Bold, color.FgCyan).Sprintf("== %s ==", text))
+}
+
+// Dim prints dimmed text.
+func (r *Renderer) Dim(text string) {
+	if r.NoColor {
