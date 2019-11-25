@@ -34,3 +34,8 @@ func (r *Renderer) Header(text string) {
 // Dim prints dimmed text.
 func (r *Renderer) Dim(text string) {
 	if r.NoColor {
+		fmt.Fprintln(r.Out, text)
+		return
+	}
+	fmt.Fprintln(r.Out, color.New(color.FgHiBlack).Sprint(text))
+}
