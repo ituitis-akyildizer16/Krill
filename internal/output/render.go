@@ -66,3 +66,8 @@ func (r *Renderer) Start(label string) *Spinner {
 			case <-sp.stop:
 				close(sp.done)
 				return
+			default:
+				fmt.Fprintf(os.Stderr, "\r%s %s", frames[i%len(frames)], label)
+				i++
+				time.Sleep(100 * time.Millisecond)
+			}
