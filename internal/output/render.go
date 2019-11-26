@@ -71,3 +71,9 @@ func (r *Renderer) Start(label string) *Spinner {
 				i++
 				time.Sleep(100 * time.Millisecond)
 			}
+		}
+	}()
+	return sp
+}
+
+// Stop clears the spinner line.
