@@ -61,3 +61,8 @@ func (r *Renderer) Start(label string) *Spinner {
 	frames := []string{"|", "/", "-", "\\"}
 	go func() {
 		i := 0
+		for {
+			select {
+			case <-sp.stop:
+				close(sp.done)
+				return
