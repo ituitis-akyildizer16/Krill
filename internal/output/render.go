@@ -55,3 +55,9 @@ type Spinner struct {
 	done chan struct{}
 }
 
+// Start begins a spinner with the given label.
+func (r *Renderer) Start(label string) *Spinner {
+	sp := &Spinner{stop: make(chan struct{}), done: make(chan struct{})}
+	frames := []string{"|", "/", "-", "\\"}
+	go func() {
+		i := 0
