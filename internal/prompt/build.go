@@ -17,3 +17,7 @@ Rules:
 - Keep answers under 150 words unless the user asks for detail.
 - Never invent commit SHAs or file content.`
 
+// ContextBundle is the collected repo context handed to the model.
+type ContextBundle struct {
+	Branch    string
+	Status    string
