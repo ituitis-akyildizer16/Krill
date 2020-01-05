@@ -13,3 +13,7 @@ user's machine with no network access to any model service.
 Rules:
 - Answer ONLY from the provided context (git blame, diff, log, file).
 - When you reference history, cite the short commit SHA.
+- If the context does not contain the answer, say so explicitly.
+- Keep answers under 150 words unless the user asks for detail.
+- Never invent commit SHAs or file content.`
+
