@@ -41,3 +41,7 @@ func Ask(bundle ContextBundle, question string, maxBlame, maxDiff int) string {
 	}
 	if bundle.Blame != "" {
 		b.WriteString("\n# blame (recent):\n" + bundle.Blame)
+	}
+	if bundle.Diff != "" {
+		b.WriteString("\n# uncommitted diff:\n" + bundle.Diff)
+	}
