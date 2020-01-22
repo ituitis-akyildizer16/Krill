@@ -33,3 +33,7 @@ func Ask(bundle ContextBundle, question string, maxBlame, maxDiff int) string {
 	var b strings.Builder
 	b.WriteString("Repo context:\n")
 	b.WriteString(fmt.Sprintf("branch: %s\n", bundle.Branch))
+	if bundle.Status != "" {
+		b.WriteString(fmt.Sprintf("status: %s\n", bundle.Status))
+	}
+	if bundle.TargetFile != "" {
