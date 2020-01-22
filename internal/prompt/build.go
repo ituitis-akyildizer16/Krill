@@ -37,3 +37,7 @@ func Ask(bundle ContextBundle, question string, maxBlame, maxDiff int) string {
 		b.WriteString(fmt.Sprintf("status: %s\n", bundle.Status))
 	}
 	if bundle.TargetFile != "" {
+		b.WriteString(fmt.Sprintf("file: %s\n", bundle.TargetFile))
+	}
+	if bundle.Blame != "" {
+		b.WriteString("\n# blame (recent):\n" + bundle.Blame)
