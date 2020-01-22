@@ -21,3 +21,7 @@ Rules:
 type ContextBundle struct {
 	Branch    string
 	Status    string
+	Blame     string
+	Diff      string
+	Log       string
+	TargetFile string
