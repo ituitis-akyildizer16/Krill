@@ -25,3 +25,7 @@ type ContextBundle struct {
 	Diff      string
 	Log       string
 	TargetFile string
+	Extra     string
+}
+
+// Ask builds a prompt for a free-form question.
