@@ -49,3 +49,7 @@ func Ask(bundle ContextBundle, question string, maxBlame, maxDiff int) string {
 		b.WriteString("\n# recent history:\n" + bundle.Log)
 	}
 	if bundle.Extra != "" {
+		b.WriteString("\n# extra:\n" + bundle.Extra)
+	}
+	b.WriteString("\n\nQuestion: " + question)
+	return b.String()
