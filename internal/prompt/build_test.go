@@ -1,2 +1,4 @@
 package prompt
 
+import (
+	"strings"
