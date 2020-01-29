@@ -53,3 +53,7 @@ func Ask(bundle ContextBundle, question string, maxBlame, maxDiff int) string {
 	}
 	b.WriteString("\n\nQuestion: " + question)
 	return b.String()
+}
+
+// SuggestSystem is the system prompt for NL-to-command.
+const SuggestSystem = `You translate a user's intent into ONE shell command.
