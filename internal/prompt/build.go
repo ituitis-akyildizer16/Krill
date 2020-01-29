@@ -57,3 +57,7 @@ func Ask(bundle ContextBundle, question string, maxBlame, maxDiff int) string {
 
 // SuggestSystem is the system prompt for NL-to-command.
 const SuggestSystem = `You translate a user's intent into ONE shell command.
+Output ONLY the command, no explanation, no markdown fences. If the intent
+is destructive (deletes, drops, force-pushes, shutdown), the command still
+gets printed plainly - the caller applies safety checks.`
+
