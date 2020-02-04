@@ -6,3 +6,4 @@ import (
 )
 
 func TestAskIncludesContext(t *testing.T) {
+	p := Ask(ContextBundle{
