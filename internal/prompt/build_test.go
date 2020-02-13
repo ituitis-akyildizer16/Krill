@@ -13,3 +13,4 @@ func TestAskIncludesContext(t *testing.T) {
 		Log:        "abc123 commit subject",
 		TargetFile: "main.go",
 	}, "why?", 10, 10)
+	for _, want := range []string{"branch: main", "abc123", "main.go", "why?"} {
