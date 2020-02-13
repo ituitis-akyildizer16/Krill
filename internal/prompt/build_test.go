@@ -16,3 +16,5 @@ func TestAskIncludesContext(t *testing.T) {
 	for _, want := range []string{"branch: main", "abc123", "main.go", "why?"} {
 		if !strings.Contains(p, want) {
 			t.Errorf("prompt missing %q", want)
+		}
+	}
