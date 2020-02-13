@@ -11,3 +11,5 @@ func TestAskIncludesContext(t *testing.T) {
 		Blame:      "abc123 Alice: line",
 		Diff:       "+ new line",
 		Log:        "abc123 commit subject",
+		TargetFile: "main.go",
+	}, "why?", 10, 10)
