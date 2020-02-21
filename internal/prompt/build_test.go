@@ -18,3 +18,5 @@ func TestAskIncludesContext(t *testing.T) {
 			t.Errorf("prompt missing %q", want)
 		}
 	}
+}
+
