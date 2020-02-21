@@ -20,3 +20,4 @@ func TestAskIncludesContext(t *testing.T) {
 	}
 }
 
+func TestSuggestPrompt(t *testing.T) {
