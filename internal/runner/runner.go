@@ -23,3 +23,15 @@ var Version = "0.9.2"
 
 // Runner holds the pieces one command needs.
 type Runner struct {
+	Cfg    *config.Config
+	Git    *git.Runner
+	Ollama *ollama.Client
+	Cache  *cache.Store
+	Out    *output.Renderer
+}
+
+// New assembles a Runner for the current directory.
+func New(cfg *config.Config) (*Runner, error) {
+	wd, err := os.Getwd()
+	if err != nil {
+		return nil, err
