@@ -35,3 +35,14 @@ func New(cfg *config.Config) (*Runner, error) {
 	wd, err := os.Getwd()
 	if err != nil {
 		return nil, err
+	}
+	gr, err := git.New(wd)
+	if err != nil {
+		return nil, fmt.Errorf("not a git repository: %w", err)
+	}
+	ol := ollama.New(cfg.Ollama.URL, cfg.Ollama.Timeout)
+	cacheDir, err := userCacheDir()
+	if err != nil {
+		return nil, err
+	}
+	st, err := cache.New(cacheDir, cfg.CacheTTLDuration())
