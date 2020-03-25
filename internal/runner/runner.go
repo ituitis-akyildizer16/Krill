@@ -46,3 +46,15 @@ func New(cfg *config.Config) (*Runner, error) {
 		return nil, err
 	}
 	st, err := cache.New(cacheDir, cfg.CacheTTLDuration())
+	if err != nil {
+		return nil, err
+	}
+	return &Runner{
+		Cfg:    cfg,
+		Git:    gr,
+		Ollama: ol,
+		Cache:  st,
+		Out:    output.New(cfg.NoColor),
+	}, nil
+}
+
