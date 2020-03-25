@@ -81,3 +81,15 @@ func (r *Runner) collectContext(ctx context.Context, file string) (prompt.Contex
 		err  error
 	}
 	ch := make(chan result, 3)
+
+	go func() {
+		target := file
+		if target == "" {
+			target = "."
+		}
+		bl, err := r.Git.Blame(ctx, target, r.Cfg.Context.MaxBlameLines)
+		if err != nil {
+			ch <- result{"blame", "", err}
+			return
+		}
+		ch <- result{"blame", git.FormatBlame(bl), nil}
