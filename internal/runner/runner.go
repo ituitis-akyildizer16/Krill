@@ -70,3 +70,14 @@ func userCacheDir() (string, error) {
 func (r *Runner) collectContext(ctx context.Context, file string) (prompt.ContextBundle, error) {
 	bundle := prompt.ContextBundle{TargetFile: file}
 
+	branch, _ := r.Git.Exec(ctx, "rev-parse", "--abbrev-ref", "HEAD")
+	bundle.Branch = strings.TrimSpace(branch)
+	status, _ := r.Git.Status(ctx)
+	bundle.Status = status
+
+	type result struct {
+		kind string
+		val  string
+		err  error
+	}
+	ch := make(chan result, 3)
