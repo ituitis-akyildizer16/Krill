@@ -58,3 +58,15 @@ func New(cfg *config.Config) (*Runner, error) {
 	}, nil
 }
 
+func userCacheDir() (string, error) {
+	base, err := os.UserCacheDir()
+	if err != nil {
+		return "", err
+	}
+	return filepath.Join(base, "krill"), nil
+}
+
+// collectContext gathers blame/diff/log in parallel.
+func (r *Runner) collectContext(ctx context.Context, file string) (prompt.ContextBundle, error) {
+	bundle := prompt.ContextBundle{TargetFile: file}
+
