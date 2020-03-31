@@ -105,3 +105,14 @@ func (r *Runner) collectContext(ctx context.Context, file string) (prompt.Contex
 	go func() {
 		l, err := r.Git.Log(ctx, r.Cfg.Context.HistoryDays*2)
 		if err != nil {
+			ch <- result{"log", "", err}
+			return
+		}
+		ch <- result{"log", l, nil}
+	}()
+
+	for i := 0; i < 3; i++ {
+		res := <-ch
+		switch res.kind {
+		case "blame":
+			bundle.Blame = res.val
