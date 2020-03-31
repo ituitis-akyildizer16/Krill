@@ -93,3 +93,15 @@ func (r *Runner) collectContext(ctx context.Context, file string) (prompt.Contex
 			return
 		}
 		ch <- result{"blame", git.FormatBlame(bl), nil}
+	}()
+	go func() {
+		d, err := r.Git.Diff(ctx, true, r.Cfg.Context.MaxDiffLines)
+		if err != nil {
+			ch <- result{"diff", "", err}
+			return
+		}
+		ch <- result{"diff", d, nil}
+	}()
+	go func() {
+		l, err := r.Git.Log(ctx, r.Cfg.Context.HistoryDays*2)
+		if err != nil {
