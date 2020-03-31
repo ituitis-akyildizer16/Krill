@@ -116,3 +116,15 @@ func (r *Runner) collectContext(ctx context.Context, file string) (prompt.Contex
 		switch res.kind {
 		case "blame":
 			bundle.Blame = res.val
+		case "diff":
+			bundle.Diff = res.val
+		case "log":
+			bundle.Log = res.val
+		}
+	}
+	return bundle, nil
+}
+
+// Ask answers a question grounded in repo context.
+func Ask(ctx context.Context, cfg *config.Config, question, file string, contextOnly bool) (string, error) {
+	r, err := New(cfg)
