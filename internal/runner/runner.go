@@ -163,3 +163,15 @@ func Suggest(ctx context.Context, cfg *config.Config, want, shell string, inline
 	r, err := New(cfg)
 	if err != nil {
 		return "", "", err
+	}
+	promptText := prompt.Suggest(want, shell, cfg.Suggest.MaxTokens)
+	key := cacheKey("suggest", want, shell)
+	cmd := r.Cache.Get(key)
+	if cmd == "" {
+		resp, err := r.Ollama.Generate(ctx, ollama.GenerateRequest{
+			Model:  cfg.Model,
+			Prompt: promptText,
+			System: prompt.SuggestSystem,
+		})
+		if err != nil {
+			return "", "", err
