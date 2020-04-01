@@ -151,3 +151,15 @@ func Ask(ctx context.Context, cfg *config.Config, question, file string, context
 		System: prompt.System,
 	})
 	sp.Stop()
+	if err != nil {
+		return "", err
+	}
+	_ = r.Cache.Set(key, resp.Response)
+	return output.Markdown(resp.Response), nil
+}
+
+// Suggest returns a shell command for the intent.
+func Suggest(ctx context.Context, cfg *config.Config, want, shell string, inline bool) (string, string, error) {
+	r, err := New(cfg)
+	if err != nil {
+		return "", "", err
