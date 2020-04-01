@@ -128,3 +128,15 @@ func (r *Runner) collectContext(ctx context.Context, file string) (prompt.Contex
 // Ask answers a question grounded in repo context.
 func Ask(ctx context.Context, cfg *config.Config, question, file string, contextOnly bool) (string, error) {
 	r, err := New(cfg)
+	if err != nil {
+		return "", err
+	}
+	bundle, err := r.collectContext(ctx, file)
+	if err != nil {
+		return "", err
+	}
+	promptText := prompt.Ask(bundle, question,
+		cfg.Context.MaxBlameLines, cfg.Context.MaxDiffLines)
+	if contextOnly {
+		return promptText, nil
+	}
