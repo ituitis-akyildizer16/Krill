@@ -140,3 +140,14 @@ func Ask(ctx context.Context, cfg *config.Config, question, file string, context
 	if contextOnly {
 		return promptText, nil
 	}
+	key := cacheKey("ask", question, file, bundle.Branch)
+	if cached := r.Cache.Get(key); cached != "" {
+		return cached, nil
+	}
+	sp := r.Out.Start("thinking")
+	resp, err := r.Ollama.Generate(ctx, ollama.GenerateRequest{
+		Model:  cfg.Model,
+		Prompt: promptText,
+		System: prompt.System,
+	})
+	sp.Stop()
