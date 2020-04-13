@@ -186,3 +186,15 @@ func Suggest(ctx context.Context, cfg *config.Config, want, shell string, inline
 	}
 	res, err := sc.Evaluate(cmd)
 	if err != nil {
+		return "", "", err
+	}
+	return res.Command, res.Warning, nil
+}
+
+// Review summarizes the staged diff.
+func Review(ctx context.Context, cfg *config.Config, staged bool) (string, error) {
+	r, err := New(cfg)
+	if err != nil {
+		return "", err
+	}
+	diff, err := r.Git.Diff(ctx, staged, cfg.Context.MaxDiffLines)
