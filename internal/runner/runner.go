@@ -175,3 +175,14 @@ func Suggest(ctx context.Context, cfg *config.Config, want, shell string, inline
 		})
 		if err != nil {
 			return "", "", err
+		}
+		cmd = suggest.Clean(resp.Response)
+		_ = r.Cache.Set(key, cmd)
+	}
+	sc, err := suggest.NewSafetyCheck(cfg.Suggest.DenyPatterns,
+		cfg.Suggest.WarnPatterns)
+	if err != nil {
+		return "", "", err
+	}
+	res, err := sc.Evaluate(cmd)
+	if err != nil {
