@@ -198,3 +198,15 @@ func Review(ctx context.Context, cfg *config.Config, staged bool) (string, error
 		return "", err
 	}
 	diff, err := r.Git.Diff(ctx, staged, cfg.Context.MaxDiffLines)
+	if err != nil {
+		return "", err
+	}
+	promptText := "Diff:\n" + diff
+	key := cacheKey("review", diff)
+	if cached := r.Cache.Get(key); cached != "" {
+		return cached, nil
+	}
+	resp, err := r.Ollama.Generate(ctx, ollama.GenerateRequest{
+		Model:  cfg.Model,
+		Prompt: promptText,
+		System: prompt.ReviewSystem,
