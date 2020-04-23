@@ -20,3 +20,8 @@ type SafetyCheck struct {
 }
 
 // NewSafetyCheck compiles the given patterns.
+func NewSafetyCheck(deny, warn []string) (*SafetyCheck, error) {
+	sc := &SafetyCheck{}
+	for _, p := range deny {
+		re, err := regexp.Compile("(?i)" + p)
+		if err != nil {
