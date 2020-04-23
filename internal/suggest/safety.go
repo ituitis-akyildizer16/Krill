@@ -25,3 +25,7 @@ func NewSafetyCheck(deny, warn []string) (*SafetyCheck, error) {
 	for _, p := range deny {
 		re, err := regexp.Compile("(?i)" + p)
 		if err != nil {
+			return nil, err
+		}
+		sc.Deny = append(sc.Deny, re)
+	}
