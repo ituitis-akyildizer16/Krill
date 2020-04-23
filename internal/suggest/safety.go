@@ -10,3 +10,8 @@ import (
 // Result carries the suggested command and any safety warning.
 type Result struct {
 	Command string
+	Warning string
+}
+
+// SafetyCheck applies deny/warn patterns to a suggested command.
+type SafetyCheck struct {
