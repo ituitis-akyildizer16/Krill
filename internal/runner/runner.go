@@ -210,3 +210,14 @@ func Review(ctx context.Context, cfg *config.Config, staged bool) (string, error
 		Model:  cfg.Model,
 		Prompt: promptText,
 		System: prompt.ReviewSystem,
+	})
+	if err != nil {
+		return "", err
+	}
+	_ = r.Cache.Set(key, resp.Response)
+	return output.Markdown(resp.Response), nil
+}
+
+// Status prints a repo digest.
+func Status(ctx context.Context, cfg *config.Config) (string, error) {
+	r, err := New(cfg)
