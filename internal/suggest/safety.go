@@ -15,3 +15,8 @@ type Result struct {
 
 // SafetyCheck applies deny/warn patterns to a suggested command.
 type SafetyCheck struct {
+	Deny []*regexp.Regexp
+	Warn []*regexp.Regexp
+}
+
+// NewSafetyCheck compiles the given patterns.
