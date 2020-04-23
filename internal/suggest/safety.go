@@ -6,3 +6,7 @@ import (
 	"regexp"
 	"strings"
 )
+
+// Result carries the suggested command and any safety warning.
+type Result struct {
+	Command string
