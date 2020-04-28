@@ -39,3 +39,8 @@ func NewSafetyCheck(deny, warn []string) (*SafetyCheck, error) {
 	return sc, nil
 }
 
+// Evaluate returns a Result with a warning, or an error if the command is
+// denied outright.
+func (sc *SafetyCheck) Evaluate(cmd string) (Result, error) {
+	for _, re := range sc.Deny {
+		if re.MatchString(cmd) {
