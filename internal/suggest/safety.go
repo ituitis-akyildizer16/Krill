@@ -34,3 +34,8 @@ func NewSafetyCheck(deny, warn []string) (*SafetyCheck, error) {
 		if err != nil {
 			return nil, err
 		}
+		sc.Warn = append(sc.Warn, re)
+	}
+	return sc, nil
+}
+
