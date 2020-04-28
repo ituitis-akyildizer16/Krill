@@ -48,3 +48,8 @@ func (sc *SafetyCheck) Evaluate(cmd string) (Result, error) {
 		}
 	}
 	for _, re := range sc.Warn {
+		if re.MatchString(cmd) {
+			return Result{Command: cmd,
+				Warning: "warning: this command may be destructive"},
+			nil
+		}
