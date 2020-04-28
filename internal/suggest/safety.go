@@ -44,3 +44,7 @@ func NewSafetyCheck(deny, warn []string) (*SafetyCheck, error) {
 func (sc *SafetyCheck) Evaluate(cmd string) (Result, error) {
 	for _, re := range sc.Deny {
 		if re.MatchString(cmd) {
+			return Result{}, &DeniedError{Command: cmd, Pattern: re.String()}
+		}
+	}
+	for _, re := range sc.Warn {
