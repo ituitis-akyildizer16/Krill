@@ -53,3 +53,8 @@ func (sc *SafetyCheck) Evaluate(cmd string) (Result, error) {
 				Warning: "warning: this command may be destructive"},
 			nil
 		}
+	}
+	return Result{Command: cmd}, nil
+}
+
+// DeniedError marks a command blocked by a deny pattern.
