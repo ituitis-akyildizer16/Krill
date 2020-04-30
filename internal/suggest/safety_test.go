@@ -1,0 +1,4 @@
+package suggest
+
+import "testing"
+
