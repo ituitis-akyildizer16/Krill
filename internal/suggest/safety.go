@@ -63,3 +63,7 @@ type DeniedError struct {
 	Pattern string
 }
 
+func (e *DeniedError) Error() string {
+	return "suggested command denied by pattern " + e.Pattern + ": " + e.Command
+}
+
