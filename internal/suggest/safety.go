@@ -58,3 +58,8 @@ func (sc *SafetyCheck) Evaluate(cmd string) (Result, error) {
 }
 
 // DeniedError marks a command blocked by a deny pattern.
+type DeniedError struct {
+	Command string
+	Pattern string
+}
+
