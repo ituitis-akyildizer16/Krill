@@ -10,3 +10,6 @@ func TestEvaluateAllows(t *testing.T) {
 	res, err := sc.Evaluate("git add -A && git commit -m wip")
 	if err != nil {
 		t.Fatalf("unexpected deny: %v", err)
+	}
+	if res.Warning != "" {
+		t.Fatalf("unexpected warning: %q", res.Warning)
