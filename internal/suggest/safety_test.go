@@ -18,3 +18,6 @@ func TestEvaluateAllows(t *testing.T) {
 
 func TestEvaluateWarns(t *testing.T) {
 	sc, _ := NewSafetyCheck([]string{"rm -rf /"}, []string{"rm "})
+	res, err := sc.Evaluate("rm -rf build/")
+	if err != nil {
+		t.Fatal(err)
