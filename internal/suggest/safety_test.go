@@ -13,3 +13,5 @@ func TestEvaluateAllows(t *testing.T) {
 	}
 	if res.Warning != "" {
 		t.Fatalf("unexpected warning: %q", res.Warning)
+	}
+}
