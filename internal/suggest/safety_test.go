@@ -15,3 +15,6 @@ func TestEvaluateAllows(t *testing.T) {
 		t.Fatalf("unexpected warning: %q", res.Warning)
 	}
 }
+
+func TestEvaluateWarns(t *testing.T) {
+	sc, _ := NewSafetyCheck([]string{"rm -rf /"}, []string{"rm "})
