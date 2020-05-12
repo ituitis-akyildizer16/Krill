@@ -21,3 +21,5 @@ func TestEvaluateWarns(t *testing.T) {
 	res, err := sc.Evaluate("rm -rf build/")
 	if err != nil {
 		t.Fatal(err)
+	}
+	if res.Warning == "" {
