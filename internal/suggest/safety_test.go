@@ -23,3 +23,6 @@ func TestEvaluateWarns(t *testing.T) {
 		t.Fatal(err)
 	}
 	if res.Warning == "" {
+		t.Fatal("want a warning for rm")
+	}
+}
