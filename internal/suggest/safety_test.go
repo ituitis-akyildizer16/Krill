@@ -26,3 +26,6 @@ func TestEvaluateWarns(t *testing.T) {
 		t.Fatal("want a warning for rm")
 	}
 }
+
+func TestEvaluateDenies(t *testing.T) {
+	sc, _ := NewSafetyCheck([]string{"rm -rf /"}, []string{})
