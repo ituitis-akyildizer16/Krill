@@ -29,3 +29,6 @@ func TestEvaluateWarns(t *testing.T) {
 
 func TestEvaluateDenies(t *testing.T) {
 	sc, _ := NewSafetyCheck([]string{"rm -rf /"}, []string{})
+	_, err := sc.Evaluate("rm -rf /")
+	if err == nil {
+		t.Fatal("want deny error")
