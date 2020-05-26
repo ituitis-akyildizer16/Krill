@@ -32,3 +32,5 @@ func TestEvaluateDenies(t *testing.T) {
 	_, err := sc.Evaluate("rm -rf /")
 	if err == nil {
 		t.Fatal("want deny error")
+	}
+}
