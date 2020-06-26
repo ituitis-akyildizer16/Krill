@@ -5,3 +5,5 @@
 // machine; the VS Code extension (extension/) and plugin SDK (plugins/)
 // talk to the same core over stdio/JSON-RPC.
 package main
+
+import (
