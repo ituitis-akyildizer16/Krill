@@ -12,3 +12,5 @@ import (
 	"github.com/ituitis-akyildizer16/krill/internal/cli"
 )
 
+func main() {
+	root := cli.NewRootCommand()
