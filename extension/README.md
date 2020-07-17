@@ -23,3 +23,9 @@ code --install-extension ./extension.vsix   # or use F5 with the Extension Host
 
 - `krill.binaryPath` — path to the CLI (default `krill`)
 - `krill.model` — Ollama model (default `qwen2.5-coder:7b`)
+
+## Development
+
+```bash
+cd extension
+npm install
