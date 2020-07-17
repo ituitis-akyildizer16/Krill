@@ -18,3 +18,8 @@ code --install-extension ./extension.vsix   # or use F5 with the Extension Host
 | krill: Ask about this file | ctrl+alt+a | Grounded answer via blame/diff |
 | krill: Review staged diff | — | Summary in a notification |
 | krill: Suggest command | — | NL → command, copied to clipboard |
+
+## Configuration
+
+- `krill.binaryPath` — path to the CLI (default `krill`)
+- `krill.model` — Ollama model (default `qwen2.5-coder:7b`)
