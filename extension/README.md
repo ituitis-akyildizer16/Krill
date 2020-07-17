@@ -7,3 +7,8 @@ Runs entirely through the local `krill` CLI + Ollama — no cloud.
 ## Install
 
 ```bash
+go install github.com/ituitis-akyildizer16/krill/cmd/krill@latest
+code --install-extension ./extension.vsix   # or use F5 with the Extension Host
+```
+
+## Commands
