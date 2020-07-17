@@ -12,3 +12,9 @@ code --install-extension ./extension.vsix   # or use F5 with the Extension Host
 ```
 
 ## Commands
+
+| Command | Binding | What it does |
+|---|---|---|
+| krill: Ask about this file | ctrl+alt+a | Grounded answer via blame/diff |
+| krill: Review staged diff | — | Summary in a notification |
+| krill: Suggest command | — | NL → command, copied to clipboard |
