@@ -1,0 +1,5 @@
+{
+  "name": "krill-extension",
+  "displayName": "krill",
+  "description": "Local-first AI copilot for VS Code - git-aware answers and diff summaries via Ollama",
+  "version": "0.9.2",
