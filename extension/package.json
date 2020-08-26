@@ -9,3 +9,9 @@
     "vscode": "^1.85.0"
   },
   "categories": ["AI", "Other"],
+  "activationEvents": ["onCommand:krill.ask", "onCommand:krill.review"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "krill.ask", "title": "krill: Ask about this file" },
+      { "command": "krill.review", "title": "krill: Review staged diff" },
