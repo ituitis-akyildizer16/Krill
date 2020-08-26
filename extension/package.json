@@ -3,3 +3,9 @@
   "displayName": "krill",
   "description": "Local-first AI copilot for VS Code - git-aware answers and diff summaries via Ollama",
   "version": "0.9.2",
+  "publisher": "krill",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["AI", "Other"],
