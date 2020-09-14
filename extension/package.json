@@ -21,3 +21,10 @@
       {
         "command": "krill.ask",
         "key": "ctrl+alt+a",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "krill",
+      "properties": {
+        "krill.binaryPath": {
