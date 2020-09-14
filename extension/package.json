@@ -15,3 +15,9 @@
     "commands": [
       { "command": "krill.ask", "title": "krill: Ask about this file" },
       { "command": "krill.review", "title": "krill: Review staged diff" },
+      { "command": "krill.suggest", "title": "krill: Suggest command" }
+    ],
+    "keybindings": [
+      {
+        "command": "krill.ask",
+        "key": "ctrl+alt+a",
