@@ -28,3 +28,9 @@
       "title": "krill",
       "properties": {
         "krill.binaryPath": {
+          "type": "string",
+          "default": "krill",
+          "description": "Path to the krill CLI binary"
+        },
+        "krill.model": {
+          "type": "string",
