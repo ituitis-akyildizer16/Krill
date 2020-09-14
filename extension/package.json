@@ -34,3 +34,9 @@
         },
         "krill.model": {
           "type": "string",
+          "default": "qwen2.5-coder:7b",
+          "description": "Ollama model to use"
+        }
+      }
+    }
+  },
