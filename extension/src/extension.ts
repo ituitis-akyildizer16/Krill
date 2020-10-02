@@ -23,3 +23,11 @@ function workspaceRoot(): string {
 
 export function activate(context: vscode.ExtensionContext): void {
   context.subscriptions.push(
+    vscode.commands.registerCommand("krill.ask", async () => {
+      const editor = vscode.window.activeTextEditor;
+      if (!editor) {
+        return vscode.window.showWarningMessage("Open a file first");
+      }
+      const file = editor.document.uri.fsPath;
+      const question = await vscode.window.showInputBox({
+        prompt: "Question about this file",
