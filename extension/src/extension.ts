@@ -14,3 +14,12 @@ function runKrill(args: string[], input?: string): Promise<string> {
   return new Promise((resolve, reject) => {
     const child = exec(binary(), args, { cwd: workspaceRoot() });
     child.then(({ stdout }) => resolve(stdout.trim())).catch(reject);
+  });
+}
+
+function workspaceRoot(): string {
+  return vscode.workspace.workspaceFolders?.[0]?.uri.fsPath ?? ".";
+}
+
+export function activate(context: vscode.ExtensionContext): void {
+  context.subscriptions.push(
