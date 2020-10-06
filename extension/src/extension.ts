@@ -31,3 +31,12 @@ export function activate(context: vscode.ExtensionContext): void {
       const file = editor.document.uri.fsPath;
       const question = await vscode.window.showInputBox({
         prompt: "Question about this file",
+        placeHolder: "why is this function slow?",
+      });
+      if (!question) {
+        return;
+      }
+      const answer = await vscode.window.withProgress(
+        { location: vscode.ProgressLocation.Notification, title: "krill" },
+        () => runKrill(["ask", question, "-f", file]),
+      );
