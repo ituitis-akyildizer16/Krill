@@ -48,3 +48,12 @@ export function activate(context: vscode.ExtensionContext): void {
     }),
 
     vscode.commands.registerCommand("krill.review", async () => {
+      const summary = await vscode.window.withProgress(
+        { location: vscode.ProgressLocation.Notification, title: "krill" },
+        () => runKrill(["review", "--staged"]),
+      );
+      vscode.window.showInformationMessage(summary);
+    }),
+
+    vscode.commands.registerCommand("krill.suggest", async () => {
+      const intent = await vscode.window.showInputBox({
