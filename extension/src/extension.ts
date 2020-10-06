@@ -57,3 +57,11 @@ export function activate(context: vscode.ExtensionContext): void {
 
     vscode.commands.registerCommand("krill.suggest", async () => {
       const intent = await vscode.window.showInputBox({
+        prompt: "What do you want to do?",
+      });
+      if (!intent) {
+        return;
+      }
+      const cmd = await runKrill(["suggest", "--inline", intent]);
+      vscode.env.clipboard.writeText(cmd);
+      vscode.window.showInformationMessage(`Copied: ${cmd}`);
