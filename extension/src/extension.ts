@@ -40,3 +40,11 @@ export function activate(context: vscode.ExtensionContext): void {
         { location: vscode.ProgressLocation.Notification, title: "krill" },
         () => runKrill(["ask", question, "-f", file]),
       );
+      const panel = vscode.window.createWebviewPanel(
+        "krill.answer", "krill", vscode.ViewColumn.Beside,
+        { enableScripts: false },
+      );
+      panel.webview.html = renderMarkdown(answer);
+    }),
+
+    vscode.commands.registerCommand("krill.review", async () => {
