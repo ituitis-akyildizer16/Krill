@@ -9,3 +9,10 @@ Python. Plugins run as subprocesses on demand — no daemon, no polling.
 pip install -e plugins/sdk
 ```
 
+## Minimal provider
+
+```python
+# ~/.config/krill/plugins/my_provider.py
+from krill_plugins import ContextProvider, register
+
+
