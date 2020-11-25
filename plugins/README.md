@@ -16,3 +16,9 @@ pip install -e plugins/sdk
 from krill_plugins import ContextProvider, register
 
 
+@register
+class JiraProvider(ContextProvider):
+    name = "jira"
+
+    def collect(self, repo: dict, file: str | None) -> str:
+        ticket = repo.get("branch", "").upper()
