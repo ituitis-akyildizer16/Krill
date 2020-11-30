@@ -22,3 +22,9 @@ class JiraProvider(ContextProvider):
 
     def collect(self, repo: dict, file: str | None) -> str:
         ticket = repo.get("branch", "").upper()
+        return f"Related ticket: {ticket} (from provider {self.name})"
+```
+
+Enable it in config:
+
+```toml
