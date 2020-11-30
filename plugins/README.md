@@ -28,3 +28,10 @@ class JiraProvider(ContextProvider):
 Enable it in config:
 
 ```toml
+[plugins]
+enabled = true
+providers = ["jira"]
+```
+
+## Why Python
+
