@@ -35,3 +35,9 @@ providers = ["jira"]
 
 ## Why Python
 
+The Go core is fast and single-binary; the plugin surface is the place
+where you want ecosystem reach. Python providers can import any HTTP
+client, parse XML/SQL, or call internal APIs — and the core never blocks
+on them (2s deadline, failures are skipped silently).
+
+## Layout
