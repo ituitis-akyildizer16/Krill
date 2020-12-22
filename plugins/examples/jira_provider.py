@@ -7,3 +7,4 @@ class JiraProvider(ContextProvider):
     name = "jira"
 
     def collect(self, repo: dict, file: str | None = None) -> str:
+        branch = repo.get("branch", "")
