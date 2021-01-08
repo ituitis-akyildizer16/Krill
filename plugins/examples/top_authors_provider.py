@@ -2,3 +2,5 @@
 
 from krill_plugins import ContextProvider
 
+
+class TopAuthorsProvider(ContextProvider):
