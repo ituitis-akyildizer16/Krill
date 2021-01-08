@@ -4,3 +4,5 @@ from krill_plugins import ContextProvider
 
 
 class TopAuthorsProvider(ContextProvider):
+    name = "top_authors"
+
