@@ -19,3 +19,9 @@ class ContextProvider:
     priority: int = 10
 
     def collect(self, repo: dict, file: Optional[str] = None) -> str:
+        """Return extra context text, or "" for nothing."""
+        return ""
+
+
+@dataclass
+class SuggestPostprocessor:
