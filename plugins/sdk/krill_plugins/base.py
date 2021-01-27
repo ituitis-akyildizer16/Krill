@@ -14,3 +14,8 @@ class ContextProvider:
     ``collect`` with a 2-second deadline; exceptions are swallowed and
     the provider's output is skipped.
     """
+
+    name: str = "unnamed"
+    priority: int = 10
+
+    def collect(self, repo: dict, file: Optional[str] = None) -> str:
