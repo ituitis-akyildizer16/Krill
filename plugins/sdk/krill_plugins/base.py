@@ -25,3 +25,9 @@ class ContextProvider:
 
 @dataclass
 class SuggestPostprocessor:
+    """Post-processes a suggested shell command."""
+
+    name: str = "unnamed"
+    priority: int = 10
+
+    def process(self, command: str, intent: str) -> str:
