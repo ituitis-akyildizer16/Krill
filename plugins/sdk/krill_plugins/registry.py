@@ -18,3 +18,10 @@ def _load_module(path: Path) -> Optional[object]:
         return None
     module = importlib.util.module_from_spec(spec)
     try:
+        sys.modules[spec.name] = module
+        spec.loader.exec_module(module)
+        return module
+    except Exception:
+        return None
+
+
