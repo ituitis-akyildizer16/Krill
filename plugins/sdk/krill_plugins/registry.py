@@ -33,3 +33,10 @@ def load_plugins(
     Returns (providers, postprocessors) ordered by priority.
     """
     base = Path(plugins_dir).expanduser()
+    if not base.is_dir():
+        return [], []
+
+    providers: list[ContextProvider] = []
+    postprocessors: list[SuggestPostprocessor] = []
+    for path in sorted(base.rglob("*.py")):
+        if path.name.startswith("_"):
