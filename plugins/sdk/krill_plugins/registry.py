@@ -25,3 +25,11 @@ def _load_module(path: Path) -> Optional[object]:
         return None
 
 
+def load_plugins(
+    plugins_dir: str | Path,
+) -> tuple[list[ContextProvider], list[SuggestPostprocessor]]:
+    """Load all plugin modules under plugins_dir.
+
+    Returns (providers, postprocessors) ordered by priority.
+    """
+    base = Path(plugins_dir).expanduser()
