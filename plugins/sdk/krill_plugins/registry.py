@@ -40,3 +40,10 @@ def load_plugins(
     postprocessors: list[SuggestPostprocessor] = []
     for path in sorted(base.rglob("*.py")):
         if path.name.startswith("_"):
+            continue
+        module = _load_module(path)
+        if module is None:
+            continue
+        for attr in dir(module):
+            value = getattr(module, attr)
+            if isinstance(value, type):
