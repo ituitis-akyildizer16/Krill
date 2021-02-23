@@ -5,3 +5,5 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "krill-plugins"
 version = "0.9.2"
+description = "Python plugin SDK for the krill terminal copilot"
+requires-python = ">=3.9"
