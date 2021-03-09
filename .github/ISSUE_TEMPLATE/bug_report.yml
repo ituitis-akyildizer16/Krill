@@ -7,3 +7,8 @@ body:
     attributes:
       value: |
         Thanks for taking the time to report a problem.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Include the command, the output, and what you expected.
