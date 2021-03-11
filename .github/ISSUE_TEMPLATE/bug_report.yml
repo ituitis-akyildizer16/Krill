@@ -18,3 +18,8 @@ body:
     id: version
     attributes:
       label: krill version (run `krill version`)
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
