@@ -23,3 +23,9 @@ body:
   - type: dropdown
     id: component
     attributes:
+      label: Component
+      options:
+        - Go core (CLI)
+        - VS Code extension
+        - Python plugin SDK
+        - Completions / docs
