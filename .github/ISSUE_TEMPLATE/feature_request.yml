@@ -4,3 +4,7 @@ labels: [enhancement]
 
 body:
   - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+    validations:
