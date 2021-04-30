@@ -16,3 +16,6 @@ body:
     validations:
       required: true
   - type: dropdown
+    id: component
+    attributes:
+      label: Component
