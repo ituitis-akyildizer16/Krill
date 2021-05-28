@@ -16,3 +16,8 @@ _krill() {
   if (( CURRENT == 2 )); then
     _describe 'command' commands
     return
+  fi
+
+  case $words[2] in
+    ask)
+      _arguments '(-f --file)'{-f,--file}'[limit context to this file]:file:_files' \
