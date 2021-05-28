@@ -11,3 +11,8 @@ _krill() {
     'init:write a default config file'
     'models:list models on the local Ollama server'
     'version:print version and build info'
+  )
+
+  if (( CURRENT == 2 )); then
+    _describe 'command' commands
+    return
