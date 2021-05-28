@@ -6,3 +6,8 @@ _krill() {
   commands=(
     'ask:ask a question about the current repo'
     'suggest:suggest a shell command'
+    'review:summarize the current diff'
+    'status:show a repo digest'
+    'init:write a default config file'
+    'models:list models on the local Ollama server'
+    'version:print version and build info'
