@@ -1,3 +1,8 @@
 #compdef krill
 # zsh completion: source or add to fpath
 
+_krill() {
+  local -a commands
+  commands=(
+    'ask:ask a question about the current repo'
+    'suggest:suggest a shell command'
