@@ -21,3 +21,8 @@ _krill() {
   case $words[2] in
     ask)
       _arguments '(-f --file)'{-f,--file}'[limit context to this file]:file:_files' \
+                 '--context-only[print context without calling the model]'
+      ;;
+    suggest)
+      _arguments '--inline[suppress safety warnings]' \
+                 '--shell[target shell]:shell:(bash zsh fish powershell)'
