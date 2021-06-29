@@ -9,3 +9,7 @@ _krill() {
     local commands="ask suggest review status init models version"
     local files="--file -f --context-only --inline --shell --staged"
 
+    case "$prev" in
+        ask|suggest)
+            COMPREPLY=( $(compgen -f -- "$cur") )
+            return 0
