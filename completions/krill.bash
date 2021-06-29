@@ -13,3 +13,7 @@ _krill() {
         ask|suggest)
             COMPREPLY=( $(compgen -f -- "$cur") )
             return 0
+            ;;
+        -f|--file)
+            COMPREPLY=( $(compgen -f -- "$cur") )
+            return 0
