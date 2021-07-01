@@ -17,3 +17,7 @@ _krill() {
         -f|--file)
             COMPREPLY=( $(compgen -f -- "$cur") )
             return 0
+            ;;
+    esac
+
+    if [[ $COMP_CWORD -eq 1 ]]; then
