@@ -6,3 +6,5 @@ complete -c krill -f
 complete -c krill -n "__fish_use_subcommand" -a ask -d "ask a question about the current repo"
 complete -c krill -n "__fish_use_subcommand" -a suggest -d "suggest a shell command"
 complete -c krill -n "__fish_use_subcommand" -a review -d "summarize the current diff"
+complete -c krill -n "__fish_use_subcommand" -a status -d "show a repo digest"
+complete -c krill -n "__fish_use_subcommand" -a init -d "write a default config file"
