@@ -8,3 +8,6 @@ complete -c krill -n "__fish_use_subcommand" -a suggest -d "suggest a shell comm
 complete -c krill -n "__fish_use_subcommand" -a review -d "summarize the current diff"
 complete -c krill -n "__fish_use_subcommand" -a status -d "show a repo digest"
 complete -c krill -n "__fish_use_subcommand" -a init -d "write a default config file"
+complete -c krill -n "__fish_use_subcommand" -a models -d "list models on the local Ollama server"
+complete -c krill -n "__fish_use_subcommand" -a version -d "print version and build info"
+
