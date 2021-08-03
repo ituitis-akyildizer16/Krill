@@ -14,3 +14,6 @@ Register-ArgumentCompleter -Native -CommandName krill -ScriptBlock {
         return
     }
 
+    switch ($currentCommand) {
+        'ask' {
+            @('--file', '-f', '--context-only') |
