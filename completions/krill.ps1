@@ -7,3 +7,7 @@ Register-ArgumentCompleter -Native -CommandName krill -ScriptBlock {
     $commands = @('ask', 'suggest', 'review', 'status', 'init', 'models', 'version')
     $tokens = $commandAst.CommandElements | ForEach-Object { $_.Extent.Text }
     $currentCommand = $tokens[1]
+
+    if ($tokens.Count -le 2) {
+        $commands | Where-Object { $_ -like "$wordToComplete*" } |
+            ForEach-Object { [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_) }
