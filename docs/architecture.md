@@ -11,3 +11,10 @@ about your repo with a model that never leaves your machine.
 │  (TypeScript)     │ ◄───────────────── │   cmd/krill       │
 └─────────────────┘                    └─────────┬────────┘
                                                  │ exec git
+                                        ┌────────▼────────┐
+                                        │  git context      │
+                                        │  (blame/diff/log) │
+                                        └────────┬────────┘
+                                                 │ HTTP /api/*
+                                        ┌────────▼────────┐
+                                        │  Ollama (local)   │
