@@ -18,3 +18,10 @@ about your repo with a model that never leaves your machine.
                                                  │ HTTP /api/*
                                         ┌────────▼────────┐
                                         │  Ollama (local)   │
+                                        └──────────────────┘
+
+  Python plugins (plugins/) feed extra context via subprocess protocol.
+```
+
+### Go core
+
