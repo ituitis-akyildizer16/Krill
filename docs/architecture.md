@@ -25,3 +25,10 @@ about your repo with a model that never leaves your machine.
 
 ### Go core
 
+`cmd/krill` + `internal/`. Each internal package is small and has one
+job:
+
+| Package | Job |
+|---|---|
+| `cli` | cobra command tree, flags, version |
+| `config` | TOML load/save with defaults |
