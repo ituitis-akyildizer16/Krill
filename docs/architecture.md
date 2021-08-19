@@ -32,3 +32,10 @@ job:
 |---|---|
 | `cli` | cobra command tree, flags, version |
 | `config` | TOML load/save with defaults |
+| `git` | blame/diff/log/status wrappers + parsing |
+| `ollama` | minimal /api/generate + /api/tags client |
+| `prompt` | bounded prompt assembly, system prompts |
+| `suggest` | NL→command + safety deny/warn checks |
+| `output` | terminal rendering, spinner, markdown strip |
+| `cache` | on-disk TTL cache for responses |
+| `runner` | orchestration of the above |
