@@ -45,3 +45,10 @@ job:
 `extension/` is a standard VS Code extension: three commands
 (ask/review/suggest) that shell out to the CLI binary. It adds no logic of
 its own — the CLI is the single source of truth.
+
+### Python plugin SDK
+
+`plugins/sdk` ships `krill_plugins` (ContextProvider,
+SuggestPostprocessor, discovery). Providers are loaded from
+`plugins.dir` at runtime; each runs as a subprocess with a 2s deadline.
+
