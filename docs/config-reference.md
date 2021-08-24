@@ -18,3 +18,8 @@ history_days = 14            # how far back recent history goes
 [ollama]
 url = "http://localhost:11434"
 timeout_seconds = 120
+
+[suggest]
+max_tokens = 60              # max tokens for the command output
+use_local_model = true       # always true; kept for clarity
+deny_patterns = ["rm -rf /", "mkfs", ":(){"]
