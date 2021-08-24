@@ -13,3 +13,8 @@ no_color = false             # disable ANSI colors
 [context]
 max_blame_lines = 400        # blame lines fed to the model
 max_diff_lines = 600         # diff lines fed to the model
+history_days = 14            # how far back recent history goes
+
+[ollama]
+url = "http://localhost:11434"
+timeout_seconds = 120
