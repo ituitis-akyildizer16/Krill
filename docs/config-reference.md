@@ -28,3 +28,9 @@ warn_patterns = ["rm ", "drop ", "git push --force", "shutdown"]
 [plugins]
 enabled = false
 dir = "~/.config/krill/plugins"
+providers = ["jira", "top_authors"]
+
+[ignore]
+paths = ["node_modules", ".git", "vendor", "dist"]
+```
+
