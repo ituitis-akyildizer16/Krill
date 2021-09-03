@@ -12,3 +12,7 @@ Component conventions live here so contributors know where things belong.
 ## Extension
 
 - The extension shells out to the CLI; it must not duplicate logic.
+- Commands return user-visible messages; errors surface as
+  notifications.
+- `npm run compile` must pass (strict TS).
+
