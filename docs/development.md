@@ -16,3 +16,6 @@ Component conventions live here so contributors know where things belong.
   notifications.
 - `npm run compile` must pass (strict TS).
 
+## Plugins
+
+- Providers are pure functions of (repo, file) → text.
