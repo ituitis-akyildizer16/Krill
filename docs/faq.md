@@ -11,3 +11,7 @@ The model runs on your hardware, so there is no network round-trip.
 **Can I use a bigger model?**
 Yes — any model in Ollama: `model = "qwen2.5-coder:32b"` or a Llama 3.1
 variant. Latency scales with your hardware.
+
+**Does it work in any directory?**
+Only inside a git repository (blame/diff/log need git). `krill` fails
+fast with a clear message outside one.
