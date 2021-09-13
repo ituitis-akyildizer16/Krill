@@ -20,3 +20,7 @@ fast with a clear message outside one.
 Yes. The extension shells out to `krill` (`krill.binaryPath`).
 
 **How do plugins work?**
+Drop a Python file into `plugins.dir`, list its provider name in
+`plugins.providers`, set `enabled = true`. Providers add context before
+the prompt is assembled.
+
