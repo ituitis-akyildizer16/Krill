@@ -15,3 +15,8 @@ variant. Latency scales with your hardware.
 **Does it work in any directory?**
 Only inside a git repository (blame/diff/log need git). `krill` fails
 fast with a clear message outside one.
+
+**Does the VS Code extension need the CLI?**
+Yes. The extension shells out to `krill` (`krill.binaryPath`).
+
+**How do plugins work?**
