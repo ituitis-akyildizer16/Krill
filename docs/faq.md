@@ -24,3 +24,8 @@ Drop a Python file into `plugins.dir`, list its provider name in
 `plugins.providers`, set `enabled = true`. Providers add context before
 the prompt is assembled.
 
+**What happens if Ollama isn't running?**
+`ask`/`suggest`/`review` fail with a clear error pointing at `ollama
+serve`. `status` and `version` still work.
+
+**Is suggest safe?**
