@@ -10,3 +10,10 @@ brew install ollama
 # Linux
 curl -fsSL https://ollama.com/install.sh | sh
 # Windows
+# download from https://ollama.com/download
+```
+
+Start it:
+
+```bash
+ollama serve
