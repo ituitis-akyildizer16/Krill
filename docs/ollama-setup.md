@@ -17,3 +17,9 @@ Start it:
 
 ```bash
 ollama serve
+```
+
+Verify:
+
+```bash
+curl http://localhost:11434/api/tags   # -> {"models":[...]}
