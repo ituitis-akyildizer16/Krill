@@ -23,3 +23,10 @@ Verify:
 
 ```bash
 curl http://localhost:11434/api/tags   # -> {"models":[...]}
+```
+
+## Pull a model
+
+```bash
+ollama pull qwen2.5-coder:7b
+```
