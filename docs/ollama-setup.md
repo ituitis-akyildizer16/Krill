@@ -37,3 +37,9 @@ ollama pull qwen2.5-coder:7b
 | `qwen2.5-coder:3b` | ~2GB | faster, weaker |
 | `qwen2.5-coder:14b` | ~9GB | better quality, needs 32GB RAM |
 | `llama3.1:8b` | ~4.9GB | general-purpose alternative |
+
+## Configure krill
+
+```toml
+[ollama]
+url = "http://localhost:11434"
