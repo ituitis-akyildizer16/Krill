@@ -9,3 +9,9 @@ There is exactly one network destination in the entire codebase: the
 configured Ollama base URL (`http://localhost:11434` by default).
 
 - `POST /api/generate` — model inference (the only payload that contains
+  repo context)
+- `GET /api/tags` — model listing for `krill models`
+
+Nothing else opens a socket. No update checks, no telemetry, no crash
+reporting, no analytics endpoints, no DNS lookups beyond the Ollama host.
+
