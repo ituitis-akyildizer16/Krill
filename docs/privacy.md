@@ -21,3 +21,8 @@ When you run `krill ask`, these are sent to the local model:
 
 - branch name and dirty-file count
 - up to `max_blame_lines` lines of blame for the target file
+- up to `max_diff_lines` lines of your uncommitted diff
+- recent commit subjects/authors (up to `history_days`)
+
+You control all of it via config caps. `--context-only` prints the exact
+payload without calling the model.
