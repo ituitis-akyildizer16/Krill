@@ -15,3 +15,9 @@ configured Ollama base URL (`http://localhost:11434` by default).
 Nothing else opens a socket. No update checks, no telemetry, no crash
 reporting, no analytics endpoints, no DNS lookups beyond the Ollama host.
 
+## What is collected
+
+When you run `krill ask`, these are sent to the local model:
+
+- branch name and dirty-file count
+- up to `max_blame_lines` lines of blame for the target file
