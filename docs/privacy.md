@@ -32,3 +32,9 @@ payload without calling the model.
 - `.env` files, SSH keys, GitHub tokens, password managers
 - Anything outside the current repository
 - Files matching `ignore.paths`
+
+## Cache
+
+Cached model responses live in `~/.cache/krill/` and are TTL-managed.
+The cache stores *responses*, never full diffs, and purges expired
+entries on write.
