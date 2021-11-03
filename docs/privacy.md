@@ -26,3 +26,9 @@ When you run `krill ask`, these are sent to the local model:
 
 You control all of it via config caps. `--context-only` prints the exact
 payload without calling the model.
+
+## What is never read
+
+- `.env` files, SSH keys, GitHub tokens, password managers
+- Anything outside the current repository
+- Files matching `ignore.paths`
