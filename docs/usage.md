@@ -20,3 +20,12 @@ krill suggest "stage and commit everything"
 krill suggest --shell fish "list largest files" --inline
 ```
 
+Destructive patterns are warned (stderr) or denied outright (deny
+patterns in config). `--inline` suppresses the warning for keybindings.
+
+## Review
+
+Summarize what you are about to commit:
+
+```bash
+krill review              # staged diff (default)
