@@ -12,3 +12,11 @@ krill ask "explain the retry loop" --context-only   # debug the prompt
 ## Suggest
 
 Natural language to a shell command:
+
+```bash
+krill suggest "stage and commit everything"
+# git add -A && git commit -m "wip"
+
+krill suggest --shell fish "list largest files" --inline
+```
+
