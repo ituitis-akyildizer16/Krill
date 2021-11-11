@@ -29,3 +29,11 @@ Summarize what you are about to commit:
 
 ```bash
 krill review              # staged diff (default)
+```
+
+## Status
+
+Repo digest + hints:
+
+```bash
+krill status
