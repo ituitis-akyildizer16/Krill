@@ -37,3 +37,11 @@ Repo digest + hints:
 
 ```bash
 krill status
+```
+
+## Config
+
+```bash
+krill init                # writes ~/.config/krill/config.toml
+krill models              # what does Ollama have installed?
+```
