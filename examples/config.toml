@@ -1,0 +1,3 @@
+# Sample config - copy to ~/.config/krill/config.toml and edit.
+
+model = "qwen2.5-coder:7b"
