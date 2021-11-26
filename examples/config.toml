@@ -1,3 +1,7 @@
 # Sample config - copy to ~/.config/krill/config.toml and edit.
 
 model = "qwen2.5-coder:7b"
+shell = "bash"
+theme = "dark"
+cache_ttl_seconds = 3600
+no_color = false
