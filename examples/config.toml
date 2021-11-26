@@ -5,3 +5,7 @@ shell = "bash"
 theme = "dark"
 cache_ttl_seconds = 3600
 no_color = false
+
+[context]
+max_blame_lines = 400
+max_diff_lines = 600
