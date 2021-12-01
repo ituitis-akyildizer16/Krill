@@ -17,3 +17,7 @@ timeout_seconds = 120
 
 [suggest]
 max_tokens = 60
+use_local_model = true
+deny_patterns = ["rm -rf /", "mkfs", ":(){"]
+warn_patterns = ["rm ", "drop ", "git push --force", "shutdown"]
+
