@@ -13,3 +13,7 @@ history_days = 14
 
 [ollama]
 url = "http://localhost:11434"
+timeout_seconds = 120
+
+[suggest]
+max_tokens = 60
