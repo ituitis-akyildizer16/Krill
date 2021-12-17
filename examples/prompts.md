@@ -8,3 +8,7 @@ Questions that work well with krill's git grounding:
 - "which callers would break if I changed the signature of X?"
 
 ## History / blame
+- "who last touched the retry loop and why?"
+- "what changed in this file this week?"
+- "is this regression recent?"
+
