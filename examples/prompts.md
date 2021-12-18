@@ -12,3 +12,7 @@ Questions that work well with krill's git grounding:
 - "what changed in this file this week?"
 - "is this regression recent?"
 
+## Before committing
+- "summarize what I changed"
+- "did I forget to handle an error path here?"
+
