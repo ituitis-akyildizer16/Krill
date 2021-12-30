@@ -16,3 +16,6 @@ Questions that work well with krill's git grounding:
 - "summarize what I changed"
 - "did I forget to handle an error path here?"
 
+## Suggestions
+- "stage and commit everything"
+- "list largest files in this repo"
