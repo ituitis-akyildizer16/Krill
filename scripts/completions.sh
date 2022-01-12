@@ -3,3 +3,5 @@
 set -euo pipefail
 
 mkdir -p completions
+
+go run ./cmd/krill completion bash > completions/krill.bash
