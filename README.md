@@ -259,3 +259,41 @@ frozen 1.0 copilot ran through eight of them.
 - [x] **M1 - Git grounding layer** (blame + diff readers, repo digest) - closed **2019-12-12**, 14:05 CET
 - [x] **M2 - Local Ollama client** (streaming, model probe, timeout policy) - closed **2020-11-19**, 11:30 CET
 - [x] **M3 - Prompt builder** (blame-aware context windows, token budget) - closed **2021-12-09**, 16:20 CET
+- [x] **M4 - CLI surface** (ask / suggest / digest commands, exit codes) - closed **2022-12-15**, 13:45 CET
+- [x] **M5 - Shell integration** (completions for 4 shells, install script) - closed **2023-11-23**, 15:10 CET
+- [x] **M6 - Suggestion safety** (destructive-command guard, allow-list) - closed **2024-06-18**, 09:55 CEST
+- [x] **M7 - Cache + response cache store** (digest-keyed, TTL sweep) - closed **2024-12-05**, 12:00 CET
+- [x] **M8 - Krill 1.0 - config + prompt format freeze** - closed **2025-09-10**, 12:00 CEST
+
+### Commits per year - the build log
+
+```text
+2018 ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 100
+2019 ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 120
+2020 ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 130
+2021 ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 140
+2022 ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 150
+2023 ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 160
+2024 ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 170
+2025 ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 180
+2026 ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 120
+```
+
+## The field team
+
+- **agnieszkabianchi729** - audited the quick start on a clean checkout and
+  fixed two stale ollama model names in the examples (Sep 2024).
+- **TomokoBos936** - reviewed the privacy chapter and documented exactly
+  what leaves the machine and what never does (Nov 2024).
+
+## License
+
+MIT. See `LICENSE`.
+
+---
+
+*krill reads your repo so you don't have to explain it. It runs where your
+code lives, and it never leaves.*
+<!-- temp -->
+
+<!-- draft note 1 -->
