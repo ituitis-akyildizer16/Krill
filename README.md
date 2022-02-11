@@ -296,4 +296,4 @@ MIT. See `LICENSE`.
 code lives, and it never leaves.*
 <!-- temp -->
 
-<!-- draft note 6 -->
+<!-- draft note 7 -->
