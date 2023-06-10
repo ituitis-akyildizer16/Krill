@@ -29,3 +29,12 @@ body:
         - VS Code extension
         - Python plugin SDK
         - Completions / docs
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: OS
+      options: [macOS, Linux, Windows, Other]
+    validations:
+      required: true
