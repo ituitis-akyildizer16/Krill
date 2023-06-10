@@ -19,3 +19,10 @@ Questions that work well with krill's git grounding:
 ## Suggestions
 - "stage and commit everything"
 - "list largest files in this repo"
+- "rebuild and rerun only failing tests"
+
+## Review
+- "does the staged diff have any risky lines?"
+
+The best results come from questions that the context can answer —
+the model is told to say "not in context" rather than guess.
