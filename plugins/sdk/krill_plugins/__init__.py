@@ -8,3 +8,6 @@ __version__ = "0.9.2"
 __all__ = [
     "ContextProvider",
     "SuggestPostprocessor",
+    "load_plugins",
+    "providers",
+]
