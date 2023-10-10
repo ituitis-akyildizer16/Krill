@@ -47,3 +47,16 @@ def load_plugins(
         for attr in dir(module):
             value = getattr(module, attr)
             if isinstance(value, type):
+                if issubclass(value, ContextProvider) and value is not ContextProvider:
+                    providers.append(value())
+                elif issubclass(value, SuggestPostprocessor) and value is not SuggestPostprocessor:
+                    postprocessors.append(value())
+
+    providers.sort(key=lambda p: p.priority)
+    postprocessors.sort(key=lambda p: p.priority)
+    return providers, postprocessors
+
+
+def providers(plugins_dir: str | Path) -> list[ContextProvider]:
+    """Convenience: only the context providers."""
+    return load_plugins(plugins_dir)[0]
