@@ -65,3 +65,19 @@ export function activate(context: vscode.ExtensionContext): void {
       const cmd = await runKrill(["suggest", "--inline", intent]);
       vscode.env.clipboard.writeText(cmd);
       vscode.window.showInformationMessage(`Copied: ${cmd}`);
+    }),
+  );
+}
+
+function renderMarkdown(text: string): string {
+  const body = text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/\n/g, "<br/>");
+  return `<!DOCTYPE html>
+<html><body style="font-family: sans-serif; padding: 1rem">
+<pre>${body}</pre>
+</body></html>`;
+}
+
+export function deactivate(): void {}
