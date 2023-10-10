@@ -31,3 +31,13 @@ class SuggestPostprocessor:
     priority: int = 10
 
     def process(self, command: str, intent: str) -> str:
+        """Return the (possibly modified) command."""
+        return command
+
+
+@dataclass
+class PluginResult:
+    """What one plugin produced for a command run."""
+
+    provider_outputs: dict[str, str] = field(default_factory=dict)
+    postprocessed: dict[str, str] = field(default_factory=dict)
