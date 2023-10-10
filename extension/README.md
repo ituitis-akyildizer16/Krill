@@ -29,3 +29,12 @@ code --install-extension ./extension.vsix   # or use F5 with the Extension Host
 ```bash
 cd extension
 npm install
+npm run compile
+```
+
+Press F5 to launch the Extension Development Host.
+
+## Privacy
+
+All model traffic goes to `http://localhost:11434` (Ollama). The extension
+sends file paths and the collected git context to that local server only.
