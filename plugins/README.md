@@ -41,3 +41,14 @@ client, parse XML/SQL, or call internal APIs — and the core never blocks
 on them (2s deadline, failures are skipped silently).
 
 ## Layout
+
+```
+plugins/
+├── sdk/                 # the krill_plugins package (pip-installable)
+│   ├── pyproject.toml
+│   └── krill_plugins/
+│       ├── __init__.py
+│       ├── base.py      # ContextProvider / SuggestPostprocessor
+│       └── registry.py  # discovery + loading
+└── examples/            # sample providers
+```
