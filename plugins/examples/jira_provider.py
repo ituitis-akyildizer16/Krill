@@ -8,3 +8,7 @@ class JiraProvider(ContextProvider):
 
     def collect(self, repo: dict, file: str | None = None) -> str:
         branch = repo.get("branch", "")
+        ticket = branch.split("/")[-1].upper()
+        if ticket and any(ch.isdigit() for ch in ticket):
+            return f"Related ticket: {ticket}"
+        return ""
