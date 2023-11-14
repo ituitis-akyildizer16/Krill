@@ -1,0 +1,25 @@
+# Go
+bin/
+*.test
+*.out
+
+# Node / VS Code extension
+node_modules/
+extension/out/
+extension/*.vsix
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+
+# Env / local
+.env
+*.local
+
+# Tooling
+.idea/
+.vscode/
+.DS_Store
+coverage.txt
