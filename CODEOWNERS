@@ -1,0 +1,4 @@
+* @krill/core
+internal/** @krill/core
+extension/** @krill/extension
+plugins/** @krill/plugins
