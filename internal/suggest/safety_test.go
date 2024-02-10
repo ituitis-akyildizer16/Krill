@@ -34,3 +34,10 @@ func TestEvaluateDenies(t *testing.T) {
 		t.Fatal("want deny error")
 	}
 }
+
+func TestCleanStripsFences(t *testing.T) {
+	got := Clean("```bash\ngit status\n```")
+	if got != "git status" {
+		t.Fatalf("Clean = %q", got)
+	}
+}
