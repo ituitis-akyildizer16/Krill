@@ -51,3 +51,12 @@ type GitError struct {
 func (e *GitError) Error() string {
 	return "git " + strings.Join(e.Args, " ") + ": " + e.Stderr
 }
+
+// Unwrap exposes the underlying error.
+func (e *GitError) Unwrap() error { return e.Err }
+
+// InRepo reports whether startDir is inside a git repository.
+func InRepo(startDir string) bool {
+	_, err := exec.Command("git", "-C", startDir, "rev-parse", "--git-dir").Output()
+	return err == nil
+}
