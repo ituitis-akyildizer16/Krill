@@ -67,3 +67,15 @@ func (e *DeniedError) Error() string {
 	return "suggested command denied by pattern " + e.Pattern + ": " + e.Command
 }
 
+// Clean strips markdown fences and leading prompts from model output.
+func Clean(out string) string {
+	s := strings.TrimSpace(out)
+	s = strings.TrimPrefix(s, "```")
+	s = strings.TrimSuffix(s, "```")
+	s = strings.TrimSpace(s)
+	if i := strings.Index(s, "\n"); i > 0 && !strings.Contains(s[:i], " ") {
+		// single-token first line (language tag) - drop it
+		s = strings.TrimSpace(s[i:])
+	}
+	return s
+}
