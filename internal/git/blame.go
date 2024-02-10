@@ -72,3 +72,15 @@ func isCommitLine(line string) bool {
 		if !(c >= '0' && c <= '9' || c >= 'a' && c <= 'f') {
 			return false
 		}
+	}
+	return true
+}
+
+// FormatBlame renders blame lines as compact text for the prompt.
+func FormatBlame(bl []BlameLine) string {
+	var b strings.Builder
+	for _, l := range bl {
+		fmt.Fprintf(&b, "%s %s (%s): %s\n", l.Commit[:8], l.Author, l.Timestamp, l.Content)
+	}
+	return b.String()
+}
