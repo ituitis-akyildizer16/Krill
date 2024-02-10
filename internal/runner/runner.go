@@ -221,3 +221,36 @@ func Review(ctx context.Context, cfg *config.Config, staged bool) (string, error
 // Status prints a repo digest.
 func Status(ctx context.Context, cfg *config.Config) (string, error) {
 	r, err := New(cfg)
+	if err != nil {
+		return "", err
+	}
+	branch, _ := r.Git.Exec(ctx, "rev-parse", "--abbrev-ref", "HEAD")
+	log, _ := r.Git.Log(ctx, 8)
+	var b strings.Builder
+	b.WriteString(fmt.Sprintf("krill v%s\n", Version))
+	b.WriteString(fmt.Sprintf("model: %s\n", cfg.Model))
+	b.WriteString(fmt.Sprintf("branch: %s\n", strings.TrimSpace(branch)))
+	b.WriteString(fmt.Sprintf("shell: %s\n", cfg.Shell))
+	b.WriteString("recent history:\n" + log + "\n")
+	return b.String(), nil
+}
+
+// Models lists models available on the local server.
+func Models(ctx context.Context, cfg *config.Config) ([]string, error) {
+	r, err := New(cfg)
+	if err != nil {
+		return nil, err
+	}
+	return r.Ollama.ListModels(ctx)
+}
+
+func cacheKey(parts ...string) string {
+	joined := strings.Join(parts, "|")
+	// keep keys filesystem-safe
+	return strings.Map(func(r rune) rune {
+		if r == '|' || r == ' ' || r == '/' || r == '\\' {
+			return '_'
+		}
+		return r
+	}, joined)
+}
