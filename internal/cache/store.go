@@ -73,3 +73,16 @@ func (s *Store) Purge() (int, error) {
 		if err != nil {
 			continue
 		}
+		var e Entry
+		if json.Unmarshal(data, &e) == nil && time.Since(e.CreatedAt) > s.ttl {
+			if os.Remove(p) == nil {
+				removed++
+			}
+		}
+	}
+	return removed, nil
+}
+
+func (s *Store) path(key string) string {
+	return filepath.Join(s.dir, key+".json")
+}
