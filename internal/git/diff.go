@@ -53,3 +53,12 @@ func (r *Runner) Status(ctx context.Context) (string, error) {
 	dirty := 0
 	for _, l := range lines {
 		if strings.TrimSpace(l) != "" {
+			dirty++
+		}
+	}
+	return branch + " (" + itoa(dirty) + " changed)", nil
+}
+
+func itoa(n int) string {
+	return strconv.Itoa(n)
+}
