@@ -21,3 +21,8 @@ func TestAskIncludesContext(t *testing.T) {
 }
 
 func TestSuggestPrompt(t *testing.T) {
+	p := Suggest("stage everything", "bash", 60)
+	if !strings.Contains(p, "stage everything") || !strings.Contains(p, "bash") {
+		t.Errorf("bad suggest prompt: %q", p)
+	}
+}
