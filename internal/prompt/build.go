@@ -61,3 +61,13 @@ Output ONLY the command, no explanation, no markdown fences. If the intent
 is destructive (deletes, drops, force-pushes, shutdown), the command still
 gets printed plainly - the caller applies safety checks.`
 
+// Suggest builds the prompt for command suggestion.
+func Suggest(intent, shell string, maxTokens int) string {
+	return fmt.Sprintf(
+		"Target shell: %s\nUser intent: %s\nCommand:", shell, intent)
+}
+
+// ReviewSystem is the system prompt for diff summaries.
+const ReviewSystem = `You summarize a git diff for a developer about to
+commit. Structure: what changed, why it matters, risks. Max 10 bullet
+lines. Never mention code that is not in the diff.`
