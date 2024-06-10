@@ -97,3 +97,19 @@ func (c *Client) ListModels(ctx context.Context) ([]string, error) {
 	}
 	names := make([]string, 0, len(out.Models))
 	for _, m := range out.Models {
+		names = append(names, m.Name)
+	}
+	return names, nil
+}
+
+// Ping reports whether the server is reachable.
+func (c *Client) Ping(ctx context.Context) error {
+	names, err := c.ListModels(ctx)
+	if err != nil {
+		return err
+	}
+	if len(names) == 0 {
+		return fmt.Errorf("ollama reachable but no models installed")
+	}
+	return nil
+}
