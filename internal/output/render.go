@@ -77,3 +77,16 @@ func (r *Renderer) Start(label string) *Spinner {
 }
 
 // Stop clears the spinner line.
+func (sp *Spinner) Stop() {
+	close(sp.stop)
+	<-sp.done
+	fmt.Fprint(os.Stderr, "\r\x1b[2K")
+}
+
+// Markdown strips common markdown tokens for terminal display.
+func Markdown(s string) string {
+	s = strings.ReplaceAll(s, "**", "")
+	s = strings.ReplaceAll(s, "`", "")
+	s = strings.ReplaceAll(s, "### ", "")
+	return s
+}
