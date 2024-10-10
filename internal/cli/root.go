@@ -158,3 +158,28 @@ func newModelsCommand(cfg *config.Config) *cobra.Command {
 				fmt.Println(n)
 			}
 			return nil
+		},
+	}
+}
+
+func newVersionCommand() *cobra.Command {
+	return &cobra.Command{
+		Use:   "version",
+		Short: "Print version and build info",
+		Run: func(cmd *cobra.Command, args []string) {
+			exe, _ := os.Executable()
+			fmt.Printf("krill v%s\nbuilt: %s\n", Version, filepath.Base(exe))
+		},
+	}
+}
+
+func joinArgs(args []string) string {
+	out := ""
+	for i, a := range args {
+		if i > 0 {
+			out += " "
+		}
+		out += a
+	}
+	return out
+}
