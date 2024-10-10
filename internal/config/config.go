@@ -107,3 +107,21 @@ func Load(path string) (*Config, error) {
 	}
 	return cfg, nil
 }
+
+// Save writes the config to disk, creating parent dirs.
+func (c *Config) Save(path string) error {
+	if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
+		return err
+	}
+	f, err := os.Create(path)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+	return toml.NewEncoder(f).Encode(c)
+}
+
+// CacheTTLDuration returns the TTL as a duration.
+func (c *Config) CacheTTLDuration() time.Duration {
+	return time.Duration(c.CacheTTL) * time.Second
+}
