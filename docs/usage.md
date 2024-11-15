@@ -45,3 +45,16 @@ krill status
 krill init                # writes ~/.config/krill/config.toml
 krill models              # what does Ollama have installed?
 ```
+
+## VS Code
+
+Install the extension and bind `ctrl+alt+a` to ask about the open file.
+
+## Plugins
+
+Drop Python providers into `plugins.dir` and enable them in config:
+
+```toml
+[plugins]
+enabled = true
+providers = ["jira"]
