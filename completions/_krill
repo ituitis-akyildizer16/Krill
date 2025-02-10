@@ -26,3 +26,11 @@ _krill() {
     suggest)
       _arguments '--inline[suppress safety warnings]' \
                  '--shell[target shell]:shell:(bash zsh fish powershell)'
+      ;;
+    review)
+      _arguments '--staged[summarize the staged diff]'
+      ;;
+  esac
+}
+
+_krill "$@"
