@@ -21,3 +21,9 @@ Register-ArgumentCompleter -Native -CommandName krill -ScriptBlock {
                 ForEach-Object { [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterName', $_) }
         }
         'suggest' {
+            @('--inline', '--shell') |
+                Where-Object { $_ -like "$wordToComplete*" } |
+                ForEach-Object { [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterName', $_) }
+        }
+    }
+}
