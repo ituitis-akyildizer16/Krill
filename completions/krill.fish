@@ -11,3 +11,7 @@ complete -c krill -n "__fish_use_subcommand" -a init -d "write a default config 
 complete -c krill -n "__fish_use_subcommand" -a models -d "list models on the local Ollama server"
 complete -c krill -n "__fish_use_subcommand" -a version -d "print version and build info"
 
+complete -c krill -n "__fish_seen_subcommand_from ask" -l file -s f -r -d "limit context to this file"
+complete -c krill -n "__fish_seen_subcommand_from ask" -l context-only -d "print context without calling the model"
+complete -c krill -n "__fish_seen_subcommand_from suggest" -l inline -d "suppress safety warnings"
+complete -c krill -n "__fish_seen_subcommand_from suggest" -l shell -r -a "bash zsh fish powershell" -d "target shell"
