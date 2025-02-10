@@ -21,3 +21,10 @@ _krill() {
     esac
 
     if [[ $COMP_CWORD -eq 1 ]]; then
+        COMPREPLY=( $(compgen -W "$commands" -- "$cur") )
+    else
+        COMPREPLY=( $(compgen -W "$files" -- "$cur") )
+    fi
+}
+
+complete -F _krill krill
