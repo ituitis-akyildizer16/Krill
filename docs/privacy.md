@@ -38,3 +38,14 @@ payload without calling the model.
 Cached model responses live in `~/.cache/krill/` and are TTL-managed.
 The cache stores *responses*, never full diffs, and purges expired
 entries on write.
+
+## The boundary
+
+The one case where prompts could leave the machine is misconfiguration:
+if you bind Ollama to `0.0.0.0` or a cloud endpoint, the model receives
+the prompts. Keep `ollama serve` on `127.0.0.1:11434`.
+
+## Plugins
+
+Python plugins run as subprocesses on your machine. They are arbitrary
+code — install only plugins you trust, from directories you control.
