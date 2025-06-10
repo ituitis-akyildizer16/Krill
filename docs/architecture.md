@@ -52,3 +52,16 @@ its own — the CLI is the single source of truth.
 SuggestPostprocessor, discovery). Providers are loaded from
 `plugins.dir` at runtime; each runs as a subprocess with a 2s deadline.
 
+## Data flow (ask)
+
+1. CLI collects branch, status, blame, diff, log **in parallel**.
+2. `prompt.Ask` assembles a bounded prompt (context caps enforced).
+3. CLI POSTs to Ollama `/api/generate` (stream=false).
+4. Response is markdown-stripped and printed; cached by key.
+
+## Design rules
+
+- The CLI is the only component that talks to git or Ollama.
+- Context is always bounded before the model is called.
+- Caching is keyed on question+file+branch and TTL'd.
+- Plugins never block: 2s deadline, failures skipped.
