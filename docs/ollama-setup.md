@@ -43,3 +43,15 @@ ollama pull qwen2.5-coder:7b
 ```toml
 [ollama]
 url = "http://localhost:11434"
+timeout_seconds = 120
+```
+
+If Ollama runs on another host (e.g., a home server), point `url` at it —
+but that sends prompts over your network. Keep it loopback for the
+privacy guarantee (see `docs/privacy.md`).
+
+## Troubleshooting
+
+- `ollama unreachable at ...` → server not running or wrong `url`.
+- `no models installed` → run `ollama pull qwen2.5-coder:7b`.
+- Slow first token → try a smaller model or check CPU/GPU load.
