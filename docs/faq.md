@@ -29,3 +29,11 @@ the prompt is assembled.
 serve`. `status` and `version` still work.
 
 **Is suggest safe?**
+Deny patterns hard-block destructive commands (`rm -rf /`); warn patterns
+flag `rm`, force-push, etc. `--inline` suppresses warnings for
+keybindings — use with your own risk.
+
+**Windows support?**
+Functional Go core + PowerShell completions + the VS Code extension. No
+Ctrl-T keybinding (terminal-specific), but `suggest --inline` works
+through any binding.
