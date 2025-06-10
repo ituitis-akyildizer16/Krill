@@ -58,3 +58,4 @@ Drop Python providers into `plugins.dir` and enable them in config:
 [plugins]
 enabled = true
 providers = ["jira"]
+```
