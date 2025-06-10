@@ -60,3 +60,13 @@ adheres to [Semantic Versioning](https://semver.org/).
 - Bounded context assembly (max_blame_lines / max_diff_lines)
 
 ## [0.2.0] - 2023-04-03
+
+### Added
+- Git context collection (blame, diff, log)
+- Streaming generation from Ollama
+
+## [0.1.0] - 2022-08-22
+
+### Added
+- Initial CLI scaffold with `ask` command
+- Minimal Ollama client
