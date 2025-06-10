@@ -34,3 +34,12 @@ providers = ["jira", "top_authors"]
 paths = ["node_modules", ".git", "vendor", "dist"]
 ```
 
+## Key notes
+
+- `deny_patterns` are regex, case-insensitive, matched against the full
+  suggested command. A match blocks the command entirely.
+- `warn_patterns` only print a warning to stderr (suppressed with
+  `--inline`).
+- `plugins.providers` is the allowlist; only listed provider names load.
+- Truncated context is always marked `... (truncated)` in the prompt, so
+  the model knows it may be missing context.
