@@ -19,3 +19,10 @@ Component conventions live here so contributors know where things belong.
 ## Plugins
 
 - Providers are pure functions of (repo, file) → text.
+- Never block: keep work under the 2s deadline.
+- New providers ship with an example in `plugins/examples/`.
+
+## Commits
+
+Conventional style: `feat:`, `fix:`, `docs:`, `chore:`, `refactor:`.
+One concern per commit. Reference the issue when one exists.
