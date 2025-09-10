@@ -11,3 +11,6 @@ lint:
 
 completions:
 	./scripts/completions.sh
+
+clean:
+	rm -rf bin
