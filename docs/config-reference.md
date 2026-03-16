@@ -43,3 +43,4 @@ paths = ["node_modules", ".git", "vendor", "dist"]
 - `plugins.providers` is the allowlist; only listed provider names load.
 - Truncated context is always marked `... (truncated)` in the prompt, so
   the model knows it may be missing context.
+<!-- draft note 6 -->
