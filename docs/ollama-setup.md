@@ -55,3 +55,4 @@ privacy guarantee (see `docs/privacy.md`).
 - `ollama unreachable at ...` → server not running or wrong `url`.
 - `no models installed` → run `ollama pull qwen2.5-coder:7b`.
 - Slow first token → try a smaller model or check CPU/GPU load.
+<!-- draft note 8 -->
