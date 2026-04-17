@@ -71,3 +71,4 @@ adheres to [Semantic Versioning](https://semver.org/).
 - Initial CLI scaffold with `ask` command
 - Minimal Ollama client
 <!-- draft note 1 -->
+<!-- draft note 9 -->
