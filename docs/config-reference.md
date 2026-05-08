@@ -44,3 +44,4 @@ paths = ["node_modules", ".git", "vendor", "dist"]
 - Truncated context is always marked `... (truncated)` in the prompt, so
   the model knows it may be missing context.
 <!-- draft note 6 -->
+<!-- draft note 14 -->
