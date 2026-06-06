@@ -72,3 +72,4 @@ adheres to [Semantic Versioning](https://semver.org/).
 - Minimal Ollama client
 <!-- draft note 1 -->
 <!-- draft note 9 -->
+<!-- draft note 17 -->
