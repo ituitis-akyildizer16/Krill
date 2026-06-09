@@ -14,3 +14,4 @@ completions:
 
 clean:
 	rm -rf bin
+# draft note 1
