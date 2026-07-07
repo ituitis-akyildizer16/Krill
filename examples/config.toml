@@ -28,3 +28,4 @@ providers = []
 
 [ignore]
 paths = ["node_modules", ".git", "vendor", "dist"]
+# draft note 5
