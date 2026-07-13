@@ -12,3 +12,4 @@ class JiraProvider(ContextProvider):
         if ticket and any(ch.isdigit() for ch in ticket):
             return f"Related ticket: {ticket}"
         return ""
+# draft note 6
