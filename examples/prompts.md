@@ -26,3 +26,4 @@ Questions that work well with krill's git grounding:
 
 The best results come from questions that the context can answer —
 the model is told to say "not in context" rather than guess.
+<!-- draft note 11
