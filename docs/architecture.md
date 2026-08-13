@@ -67,3 +67,4 @@ SuggestPostprocessor, discovery). Providers are loaded from
 - Plugins never block: 2s deadline, failures skipped.
 <!-- draft note 5 -->
 <!-- draft note 13 -->
+<!-- draft note 21 -->
