@@ -26,3 +26,4 @@ Component conventions live here so contributors know where things belong.
 
 Conventional style: `feat:`, `fix:`, `docs:`, `chore:`, `refactor:`.
 One concern per commit. Reference the issue when one exists.
+<!-- draft note 15
