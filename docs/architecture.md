@@ -65,6 +65,3 @@ SuggestPostprocessor, discovery). Providers are loaded from
 - Context is always bounded before the model is called.
 - Caching is keyed on question+file+branch and TTL'd.
 - Plugins never block: 2s deadline, failures skipped.
-<!-- draft note 5 -->
-<!-- draft note 13 -->
-<!-- draft note 21 -->

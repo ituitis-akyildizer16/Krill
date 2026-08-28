@@ -49,6 +49,3 @@ the prompts. Keep `ollama serve` on `127.0.0.1:11434`.
 
 Python plugins run as subprocesses on your machine. They are arbitrary
 code — install only plugins you trust, from directories you control.
-<!-- draft note 4 -->
-<!-- draft note 12 -->
-<!-- draft note 20 -->

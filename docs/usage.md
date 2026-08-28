@@ -59,6 +59,3 @@ Drop Python providers into `plugins.dir` and enable them in config:
 enabled = true
 providers = ["jira"]
 ```
-<!-- draft note 2 -->
-<!-- draft note 10 -->
-<!-- draft note 18 -->

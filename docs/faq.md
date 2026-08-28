@@ -37,6 +37,3 @@ keybindings — use with your own risk.
 Functional Go core + PowerShell completions + the VS Code extension. No
 Ctrl-T keybinding (terminal-specific), but `suggest --inline` works
 through any binding.
-<!-- draft note 3 -->
-<!-- draft note 11 -->
-<!-- draft note 19 -->

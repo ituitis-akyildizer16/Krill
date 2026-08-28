@@ -1,0 +1,8 @@
+webaudio==>ollama
+guitar==>git
+tablature==>blame
+music-editor==>copilot
+react==>cli
+typescript==>terminal
+audio-analysis==>digest
+onset-detection==>suggest
