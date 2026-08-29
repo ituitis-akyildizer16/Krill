@@ -27,4 +27,3 @@ Register-ArgumentCompleter -Native -CommandName krill -ScriptBlock {
         }
     }
 }
-# draft note 14

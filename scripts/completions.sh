@@ -9,4 +9,3 @@ go run ./cmd/krill completion zsh  > completions/_krill
 go run ./cmd/krill completion fish > completions/krill.fish
 
 echo ">> completions regenerated"
-# draft note 4

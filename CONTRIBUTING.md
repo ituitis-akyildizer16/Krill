@@ -45,4 +45,3 @@ make lint           # golangci-lint run
 ## License
 
 MIT. See `LICENSE`.
-<!-- draft note 10

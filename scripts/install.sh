@@ -10,4 +10,3 @@ go build -ldflags "-X github.com/VGaussaleex/krill/internal/cli.Version=${VERSIO
 
 echo ">> installed to $(go env GOPATH)/bin/krill"
 echo ">> next: ollama pull qwen2.5-coder:7b && krill status"
-# draft note 12

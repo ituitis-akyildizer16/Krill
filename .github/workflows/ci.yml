@@ -42,4 +42,3 @@ jobs:
           python-version: "3.11"
       - run: pip install -e sdk
       - run: python -m py_compile sdk/krill_plugins/*.py examples/*.py
-# draft note 3

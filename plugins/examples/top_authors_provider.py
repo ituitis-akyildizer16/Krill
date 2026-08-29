@@ -11,4 +11,3 @@ class TopAuthorsProvider(ContextProvider):
             return ""
         # In production this would shell out to `git shortlog -sne -- <file>`.
         return "Recent authors for this file: see git shortlog."
-# draft note 7

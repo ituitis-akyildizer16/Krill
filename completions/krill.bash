@@ -28,4 +28,3 @@ _krill() {
 }
 
 complete -F _krill krill
-# draft note 13
